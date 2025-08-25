@@ -190,7 +190,7 @@ export default function PreBuildDashBoard() {
               >
                 <Items title="Список заявок" image={theme.palette.mode === ThemeMode.DARK ? SliderDark2 : SliderLight2} link="#" />
                 <Items title="Статистика по заявкам" image={theme.palette.mode === ThemeMode.DARK ? SliderDark1 : SliderLight1} link="#" />
-                <Items title="Планироващик" image={theme.palette.mode === ThemeMode.DARK ? SliderDark3 : SliderLight3} link="#" />
+                <Items title="Планировщик" image={theme.palette.mode === ThemeMode.DARK ? SliderDark3 : SliderLight3} link="#" />
               </Carousel>
             </Box>
           </Grid>

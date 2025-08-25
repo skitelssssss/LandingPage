@@ -4,7 +4,7 @@ import jsconfigPaths from 'vite-jsconfig-paths';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
-  const API_URL = `${env.VITE_APP_BASE_NAME}`;
+  const BASE_URL = env.VITE_APP_BASE_NAME || '/'; // fallback к '/'
   const PORT = 3000;
 
   return {
@@ -14,11 +14,13 @@ export default defineConfig(({ mode }) => {
       host: true
     },
     build: {
+      outDir: 'dist', // убедимся, что сборка в dist
       chunkSizeWarningLimit: 1600
     },
     preview: {
       open: true,
-      host: true
+      host: true,
+      port: PORT
     },
     define: {
       global: 'window'
@@ -28,7 +30,7 @@ export default defineConfig(({ mode }) => {
         '@tabler/icons-react': '@tabler/icons-react/dist/esm/icons/index.mjs'
       }
     },
-    base: API_URL,
+    base: BASE_URL, // ← теперь корректно
     plugins: [react(), jsconfigPaths()]
   };
 });

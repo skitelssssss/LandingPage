@@ -66,38 +66,115 @@ export default function RtlInfoSection() {
                 }}
               >
                 <Typography
-                  variant="h3"
+                  variant="h6"
                   sx={{
                     color: '#fff',
                     width: 'max-content',
-                    fontSize: { xs: '1rem', sm: '1.563rem', md: '2.5rem', xl: '3.125rem' },
-                    mt: { xs: 2.5, sm: -5.5, md: -5, xl: 0}
+                    fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem', xl: '2.7rem' },
+                    mt: { xs: 2.1, sm: 3.75, md: 7, xl: 7 }
                   }}
                 >
                   Planify —
                 </Typography>
               </Box>
               <Slider {...settings} >
-                <Typography variant="h2" sx={{ color: 'text.hint' }}>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    color: 'text.hint',
+                    fontSize: { 
+                      xs: '1rem',   // 16px на мобильных
+                      sm: '1.25rem', // 20px
+                      md: '1.5rem',  // 24px
+                      xl: '2.7rem'   // 40px
+                    }
+                  }}
+                >
                   Белорусский разработчик
                 </Typography>
-                <Typography variant="h2" sx={{ color: 'text.hint' }}>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    color: 'text.hint',
+                    fontSize: { 
+                      xs: '1rem',   // 16px на мобильных
+                      sm: '1.25rem', // 20px
+                      md: '1.5rem',  // 24px
+                      xl: '2.7rem'   // 40px
+                    }
+                  }}
+                >
                   Защита персональных данных
                 </Typography>
-                <Typography variant="h2" sx={{ color: 'text.hint' }}>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    color: 'text.hint',
+                    fontSize: { 
+                      xs: '1rem',   // 16px на мобильных
+                      sm: '1.25rem', // 20px
+                      md: '1.5rem',  // 24px
+                      xl: '2.7rem'   // 40px
+                    }
+                  }}
+                >
                   Конкурентные цены
                 </Typography>
-                <Typography variant="h2" sx={{ color: 'text.hint' }}>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    color: 'text.hint',
+                    fontSize: { 
+                      xs: '1rem',   // 16px на мобильных
+                      sm: '1.25rem', // 20px
+                      md: '1.5rem',  // 24px
+                      xl: '2.7rem'   // 40px
+                    }
+                  }}
+                >
                   Простота внедрения
                 </Typography>
-                <Typography variant="h2" sx={{ color: 'text.hint' }}>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    color: 'text.hint',
+                    fontSize: { 
+                      xs: '1rem',   // 16px на мобильных
+                      sm: '1.25rem', // 20px
+                      md: '1.5rem',  // 24px
+                      xl: '2.7rem'   // 40px
+                    }
+                  }}
+                >
                   Интуитивно понятный интерфейс
                 </Typography>
-                <Typography variant="h2" sx={{ color: 'text.hint' }}>
-                  Подходит для компаний любого размера
+                <Typography
+                  variant="h4"
+                  sx={{
+                    color: 'text.hint',
+                    fontSize: { 
+                      xs: '1rem',   // 16px на мобильных
+                      sm: '1.25rem', // 20px
+                      md: '1.5rem',  // 24px
+                      xl: '2.7rem'   // 40px
+                    }
+                  }}
+                >
+                  Подходит для любой компаний
                 </Typography>
-                <Typography variant="h2" sx={{ color: 'text.hint' }}>
-                  Быстрая окупаемость и измеримый результат
+                <Typography
+                  variant="h4"
+                  sx={{
+                    color: 'text.hint',
+                    fontSize: { 
+                      xs: '1rem',   // 16px на мобильных
+                      sm: '1.25rem', // 20px
+                      md: '1.5rem',  // 24px
+                      xl: '2.7rem'   // 40px
+                    }
+                  }}
+                >
+                  Быстрая окупаемость
                 </Typography>
               </Slider>
             </Stack>

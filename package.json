@@ -1,7 +1,7 @@
 {
   "name": "berry-material-react-js",
   "version": "4.1.0",
-  "homepage":"https://github.com/skitelssssss/landing.git",
+  "homepage": "https://skitelssssss.github.io/LandingPage",
   "private": true,
   "dependencies": {
     "@emotion/cache": "11.14.0",
@@ -17,7 +17,6 @@
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.5",
     "framer-motion": "^12.9.2",
-    "gh-pages": "^6.3.0",
     "lodash-es": "4.17.21",
     "react": "19.1.0",
     "react-dom": "19.1.0",
@@ -37,6 +36,8 @@
     "yet-another-react-lightbox": "3.23.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "start": "vite",
     "build": "vite build",
     "build-stage": "env-cmd -f .env.qa vite build",
@@ -44,9 +45,7 @@
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-    "knip": "knip",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "knip": "knip"
   },
   "eslintConfig": {
     "extends": [
@@ -77,6 +76,7 @@
     "eslint-plugin-prettier": "5.2.6",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "5.2.0",
+    "gh-pages": "^6.3.0",
     "knip": "5.50.5",
     "prettier": "3.5.3",
     "prettier-eslint-cli": "8.0.1",

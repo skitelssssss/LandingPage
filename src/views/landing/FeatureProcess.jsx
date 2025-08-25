@@ -52,13 +52,13 @@ export default function ProcessScheme() {
       await Promise.all(loadPromises);
       setImagesLoaded(true);
 
-      const timer1 = setTimeout(() => setVisibleElements([0]), 300);
-      const timer2 = setTimeout(() => setVisibleElements([0, 1]), 600);
-      const timer3 = setTimeout(() => setVisibleElements([0, 1, 2]), 900);
-      const timer4 = setTimeout(() => setVisibleElements([0, 1, 2, 3]), 1200);
-      const timer5 = setTimeout(() => setVisibleElements([0, 1, 2, 3, 4]), 1500);
-      const timer6 = setTimeout(() => setVisibleElements([0, 1, 2, 3, 4, 5]), 1800);
-      const timer7 = setTimeout(() => setVisibleElements([0, 1, 2, 3, 4, 5, 6]), 2100);
+      const timer1 = setTimeout(() => setVisibleElements([0]), 100);
+      const timer2 = setTimeout(() => setVisibleElements([0, 1]), 200);
+      const timer3 = setTimeout(() => setVisibleElements([0, 1, 2]), 500);
+      const timer4 = setTimeout(() => setVisibleElements([0, 1, 2, 3]), 900);
+      const timer5 = setTimeout(() => setVisibleElements([0, 1, 2, 3, 4]), 1200);
+      const timer6 = setTimeout(() => setVisibleElements([0, 1, 2, 3, 4, 5]), 1500);
+      const timer7 = setTimeout(() => setVisibleElements([0, 1, 2, 3, 4, 5, 6]), 1800);
 
       return () => {
         clearTimeout(timer1);
@@ -265,7 +265,7 @@ export default function ProcessScheme() {
             <motion.img
               src={ProcessImage}
               alt="Процессы"
-              style={{ width: 100, height: 100 }}
+              style={{ width: 170, height: 170 }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView && imagesLoaded && visibleElements.includes(0) ? { 
                 opacity: 1, 
@@ -294,7 +294,7 @@ export default function ProcessScheme() {
                 <motion.img
                   src={ArrowDown}
                   alt=""
-                  style={{ width: 20, height: 40 }}
+                  style={{ width: 70, height: 90 }}
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
@@ -308,7 +308,7 @@ export default function ProcessScheme() {
             <motion.img
               src={PlanningImage}
               alt="Планирование"
-              style={{ width: 100, height: 100 }}
+              style={{ width: 170, height: 170 }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView && imagesLoaded && visibleElements.includes(2) ? { 
                 opacity: 1, 
@@ -337,7 +337,7 @@ export default function ProcessScheme() {
                 <motion.img
                   src={ArrowDown}
                   alt=""
-                  style={{ width: 20, height: 40 }}
+                  style={{ width: 70, height: 90 }}
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
@@ -351,7 +351,7 @@ export default function ProcessScheme() {
             <motion.img
               src={ControlImage}
               alt="Контроль"
-              style={{ width: 100, height: 100 }}
+              style={{ width: 170, height: 170 }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView && imagesLoaded && visibleElements.includes(4) ? { 
                 opacity: 1, 
@@ -380,7 +380,7 @@ export default function ProcessScheme() {
                 <motion.img
                   src={ArrowDown}
                   alt=""
-                  style={{ width: 20, height: 40 }}
+                  style={{ width: 70, height: 90 }}
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
@@ -394,7 +394,7 @@ export default function ProcessScheme() {
             <motion.img
               src={ResultImage}
               alt="Результат"
-              style={{ width: 100, height: 100 }}
+              style={{ width: 170, height: 170 }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView && imagesLoaded && visibleElements.includes(6) ? { 
                 opacity: 1, 
