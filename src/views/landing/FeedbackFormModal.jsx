@@ -34,7 +34,6 @@ const FeedbackFormModal = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
     setOpen(false);
-    resetForm();
   };
 
   const handleChange = (e) => {
@@ -126,44 +125,54 @@ const FeedbackFormModal = () => {
     setSnackbar((prev) => ({ ...prev, open: false }));
   };
 
+  const [openPolicy, setOpenPolicy] = useState(false);
+  const handleOpenPolicy = () => setOpenPolicy(true);
+  const handleClosePolicy = () => setOpenPolicy(false);
+
   const style = {
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: { xs: '90%', sm: 500 },
+    width: { xs: '89%', sm: 500 },
+    maxWidth: '100%',
     bgcolor: 'background.paper',
     boxShadow: 24,
-    p: 4,
-    borderRadius: 5,
+    borderRadius: 3,
+    p: { xs: 4, sm: 4 },
   };
 
-  const [openPolicy, setOpenPolicy] = useState(false);
-  const handleOpenPolicy = () => setOpenPolicy(true);
-  const handleClosePolicy = () => setOpenPolicy(false);
-
   return (
-    <>
-      <Button
-        component="button"
-        onClick={handleOpen}
-        size="large"
-        variant="text"
-        color="text.primary"
-      >
-        Связаться с нами
-      </Button>
+  <>
+    <Button
+      component="button"
+      onClick={handleOpen}
+      size="large"
+      variant="text"
+      color="text.primary"
+    >
+      Связаться с нами
+    </Button>
 
-      <Modal open={open} onClose={handleClose}>
-        <Box sx={style}>
-          <Typography variant="h2" component="h2" mb={1} fontSize="1.5rem">
-            Свяжитесь с нами
-          </Typography>
-          <Typography variant="h5" color="text.secondary" mb={2}>
-            Оставьте заявку, и мы свяжемся с вами в ближайшее время.
-          </Typography>
+    <Modal open={open} onClose={handleClose}>
+      <Box sx={style}>
+        <Typography variant="h2" component="h2" mb={1} fontSize="1.5rem">
+          Свяжитесь с нами
+        </Typography>
+        <Typography variant="h5" color="text.secondary" mb={3}>
+          Оставьте заявку, и мы свяжемся с вами в ближайшее время.
+        </Typography>
 
-          <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
+          <Box
+            component="div"
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 2,
+              padding: '1rem'
+            }}
+          >
             <TextField
               fullWidth
               label="Имя"
@@ -171,7 +180,6 @@ const FeedbackFormModal = () => {
               value={formData.firstName}
               onChange={handleChange}
               variant="outlined"
-              margin="normal"
               color="secondary"
             />
 
@@ -182,7 +190,6 @@ const FeedbackFormModal = () => {
               value={formData.lastName}
               onChange={handleChange}
               variant="outlined"
-              margin="normal"
               color="secondary"
             />
 
@@ -193,10 +200,9 @@ const FeedbackFormModal = () => {
               value={formData.email}
               onChange={handleChange}
               variant="outlined"
-              margin="normal"
               color="secondary"
               error={!!errors.email}
-              helperText={errors.email || ' '}
+              helperText={errors.email}
             />
 
             <TextField
@@ -206,10 +212,9 @@ const FeedbackFormModal = () => {
               value={formData.company}
               onChange={handleChange}
               variant="outlined"
-              margin="normal"
               color="secondary"
               error={!!errors.company}
-              helperText={errors.company || ' '}
+              helperText={errors.company}
             />
 
             <TextField
@@ -221,42 +226,41 @@ const FeedbackFormModal = () => {
               multiline
               rows={4}
               variant="outlined"
-              margin="normal"
               color="secondary"
             />
 
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={agreed}
-                  onChange={handleAgreementChange}
-                  color="secondary"
-                  inputProps={{ 'aria-label': 'Согласие на обработку персональных данных' }}
-                />
-              }
-              label={
-                <Typography variant="body2" fontSize="0.875rem">
-                  Я даю согласие на обработку персональных данных{' '}
-                  <Link
-                    component="button"
-                    type="button"
-                    onClick={handleOpenPolicy}
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={agreed}
+                    onChange={handleAgreementChange}
                     color="secondary"
-                    sx={{ textDecoration: 'underline', background: 'none', border: 'none', cursor: 'pointer' }}
-                  >
-                    (политика конфиденциальности)
-                  </Link>
+                    inputProps={{ 'aria-label': 'Согласие на обработку персональных данных' }}
+                  />
+                }
+                label={
+                  <Typography variant="body2" fontSize="0.875rem">
+                    Я даю согласие на обработку персональных данных{' '}
+                    <Link
+                      component="button"
+                      type="button"
+                      onClick={handleOpenPolicy}
+                      color="secondary"
+                      sx={{ textDecoration: 'underline', background: 'none', border: 'none', cursor: 'pointer' }}
+                    >
+                      (политика конфиденциальности)
+                    </Link>
+                  </Typography>
+                }
+              />
+              {errors.agreement && (
+                <Typography variant="body2" color="error" fontSize="0.875rem">
+                  {errors.agreement}
                 </Typography>
-              }
-              sx={{ mt: 1 }}
-            />
-            {errors.agreement && (
-              <Typography variant="body2" color="error" fontSize="0.875rem" mt={0.5}>
-                {errors.agreement}
-              </Typography>
-            )}
+              )}
+            </Box>
 
-            <Box mt={3} display="flex" justifyContent="flex-end" gap={2}>
+            <Box mt={4} display="flex" justifyContent="flex-end" gap={2}>
               <Button type="button" onClick={handleClose} color="text.primary">
                 Отмена
               </Button>
@@ -286,12 +290,12 @@ const FeedbackFormModal = () => {
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            width: { xs: '90%', sm: 600 },
+            width: { xs: '90%', sm: 1000 },
             maxHeight: '90vh',
             bgcolor: 'background.paper',
             boxShadow: 24,
             p: 4,
-            borderRadius: 3,
+            borderRadius: 6,
             overflowY: 'auto'
           }}>
             <Typography id="modal-title" variant="h2" component="h2" gutterBottom>

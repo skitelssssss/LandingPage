@@ -35,11 +35,11 @@ export default function Landing() {
         <HeaderSection />
       </Box>
 
-      <Box component="section" sx={{ py: 12.5, bgcolor: theme.palette.mode === ThemeMode.DARK ? 'dark.dark' : 'background.default' }}>
+      <Box id="about" component="section" sx={{ py: 12.5, bgcolor: theme.palette.mode === ThemeMode.DARK ? 'dark.dark' : 'background.default' }}>
         <FeatureProcess />
       </Box>
 
-      <Box component="section" sx={{ py: 12.5, bgcolor: theme.palette.mode === ThemeMode.DARK ? 'background.default' : 'grey.100' }}>
+      <Box id="features" component="section" sx={{ py: 12.5, bgcolor: theme.palette.mode === ThemeMode.DARK ? 'background.default' : 'grey.100' }}>
         <CustomizeSection />
       </Box>
 
@@ -51,11 +51,11 @@ export default function Landing() {
         <PreBuildDashBoard />
       </Box>
 
-      <Box component="section" sx={{ py: 12.5, bgcolor: theme.palette.mode === ThemeMode.DARK ? 'dark.dark' : 'background.default' }}>
+      <Box id="reviews" component="section" sx={{ py: 12.5, bgcolor: theme.palette.mode === ThemeMode.DARK ? 'dark.dark' : 'background.default' }}>
         <PeopleSection />
       </Box>
 
-      <Box component="section">
+      <Box id="pricing" component="section">
         <CardSection />
       </Box>
 

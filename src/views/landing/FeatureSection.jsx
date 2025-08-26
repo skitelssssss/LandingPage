@@ -19,7 +19,23 @@ import Offer4 from 'assets/images/landing/offer/offer-4.png';
 
 function OfferCard({ title, caption, image }) {
   const theme = useTheme();
-  const AvaterSx = { bgcolor: 'transparent', color: 'secondary.main', width: 120, height: 120 };
+  const avatarSx = {
+    bgcolor: 'transparent',
+    color: 'secondary.main',
+    width: 120,
+    height: 120,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: '0 auto',
+    '& img': {
+      objectFit: 'contain',
+      width: '100%',
+      height: '100%',
+      maxWidth: '100%',
+      maxHeight: '100%',
+    },
+  };
 
   return (
     <FadeInWhenVisible>
@@ -28,17 +44,20 @@ function OfferCard({ title, caption, image }) {
           bgcolor: theme.palette.mode === ThemeMode.DARK ? 'dark.800' : 'grey.100',
           borderColor: 'divider',
           '&:hover': { boxShadow: 'none' },
-          height: 1
+          textAlign: 'center',
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          padding: 2,
         }}
       >
-        <Stack spacing={4}>
-          <Avatar variant="rounded" sx={AvaterSx}>
-            <CardMedia component="img" src={image} alt="Beautiful User Interface" />
+        <Stack spacing={4} justifyContent="center" alignItems="center">
+          <Avatar variant="rounded" sx={avatarSx}>
+            <CardMedia component="img" src={image} alt="" />
           </Avatar>
           <Stack spacing={2}>
-            <Typography variant="h3">
-              {title}
-            </Typography>
+            <Typography variant="h3">{title}</Typography>
             <Typography variant="body2" sx={{ fontSize: '1rem' }}>
               {caption}
             </Typography>
@@ -53,7 +72,7 @@ export default function FeatureSection() {
   return (
     <section aria-labelledby="problem-solution">
       <Container>
-        <Grid container spacing={7.5} sx={{ justifyContent: 'center' }}>
+        <Grid container spacing={7} sx={{ justifyContent: 'center' }}>
           <Grid sx={{ textAlign: 'center' }} size={{ xs: 12, md: 6 }}>
             <Grid container spacing={1.5}>
               <Grid size={12}>
@@ -69,7 +88,7 @@ export default function FeatureSection() {
             </Grid>
           </Grid>
             <Grid size={12}>
-              <Grid container spacing={5} sx={{ justifyContent: 'center', '&> .MuiGrid-root > div': { height: '100%' } }}>
+              <Grid container spacing={4} sx={{ justifyContent: 'center', '&> .MuiGrid-root > div': { height: '100%' } }}>
                 <Grid size={{ md: 4.9, sm: 6 }}>
                   <article aria-labelledby="saving-time">
                     <OfferCard
@@ -91,7 +110,7 @@ export default function FeatureSection() {
               </Grid>
             </Grid>
             <Grid size={12}>
-              <Grid container spacing={5} sx={{ justifyContent: 'center', '&> .MuiGrid-root > div': { height: '100%' } }}>
+              <Grid container spacing={4} sx={{ justifyContent: 'center', '&> .MuiGrid-root > div': { height: '100%' }, mt: -3.5  }}>
                 <Grid size={{ md: 4.9, sm: 6 }}>
                   <article aria-labelledby="full-control">
                     <OfferCard

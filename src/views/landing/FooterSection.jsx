@@ -87,7 +87,7 @@ export default function FooterSection() {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          width: { xs: '90%', sm: 600 },
+          width: { xs: '90%', sm: 1000 },
           maxHeight: '90vh',
           bgcolor: 'background.paper',
           boxShadow: 24,
