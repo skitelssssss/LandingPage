@@ -35,23 +35,24 @@ export default function Landing() {
         <HeaderSection />
       </Box>
 
-      <Box id="about" component="section" sx={{ py: 12.5, bgcolor: theme.palette.mode === ThemeMode.DARK ? 'dark.dark' : 'background.default' }}>
+      {/* TODO: убрать дубли */}
+      <Box component="section" sx={{ py: 12.5, bgcolor: 'background.default' }}>
         <FeatureProcess />
       </Box>
 
-      <Box id="features" component="section" sx={{ py: 12.5, bgcolor: theme.palette.mode === ThemeMode.DARK ? 'background.default' : 'grey.100' }}>
+      <Box component="section" sx={{ py: 12.5, bgcolor: 'grey.100' }}>
         <CustomizeSection />
       </Box>
 
-      <Box component="section" sx={{ py: 12.5, bgcolor: theme.palette.mode === ThemeMode.DARK ? 'dark.dark' : 'background.default' }}>
+      <Box component="section" sx={{ py: 12.5, bgcolor: 'background.default' }}>
         <FeatureSection />
       </Box>
 
-      <Box component="section" sx={{ py: 12.5, bgcolor: theme.palette.mode === ThemeMode.DARK ? 'background.default' : 'grey.100' }}>
+      <Box id="decisions" component="section" sx={{ py: 12.5, bgcolor: 'grey.100' }}>
         <PreBuildDashBoard />
       </Box>
 
-      <Box id="reviews" component="section" sx={{ py: 12.5, bgcolor: theme.palette.mode === ThemeMode.DARK ? 'dark.dark' : 'background.default' }}>
+      <Box id="reviews" component="section" sx={{ py: 12.5, bgcolor: 'background.default' }}>
         <PeopleSection />
       </Box>
 

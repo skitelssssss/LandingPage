@@ -26,7 +26,7 @@ export default function PeopleSection() {
 
   return (
     <section aria-labelledby="customer-reviews">
-      <Container>
+      <Container sx={{ px: { xs: 4, md: 0 } }}>
         <Grid container spacing={3.5} sx={{ justifyContent: 'center' }}>
           <Grid sx={{ textAlign: 'center' }} size={12}>
             <Stack spacing={1.25} sx={{ alignItems: 'center' }}>

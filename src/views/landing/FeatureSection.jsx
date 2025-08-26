@@ -70,9 +70,8 @@ function OfferCard({ title, caption, image }) {
 
 export default function FeatureSection() {
   return (
-    <section aria-labelledby="problem-solution">
-      <Container>
-        <Grid container spacing={7} sx={{ justifyContent: 'center' }}>
+      <Container sx={{ px: { xs: 4, md: 0 } }}>
+        <Grid container spacing={5} sx={{ justifyContent: 'center' }}>
           <Grid sx={{ textAlign: 'center' }} size={{ xs: 12, md: 6 }}>
             <Grid container spacing={1.5}>
               <Grid size={12}>
@@ -133,7 +132,6 @@ export default function FeatureSection() {
             </Grid>
         </Grid>
       </Container>
-    </section>
   );
 }
 

@@ -21,9 +21,11 @@ export default function CustomizeSection() {
     wordBreak: 'break-word'
   };
 
-  return (
+  return ( 
+    // TODO: убрать лишние теги
+    // TODO: разбить на два
     <section aria-labelledby="the-advantages-page">
-      <Container>
+      <Container sx={{ px: { xs: 4, md: 0 } }}>
         <Grid container spacing={{ xs: 3, sm: 4, md: 5 }} sx={{ justifyContent: 'center' }}>
           
           <Grid size={12}>

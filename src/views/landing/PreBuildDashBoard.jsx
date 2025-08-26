@@ -55,7 +55,7 @@ function SampleNextArrow(props) {
           height: { md: 20, lg: 40, xl: '40px' },
           width: { md: 20, lg: 40, xl: '40px' }
         },
-        right: { xs: '50px', md: '80px', lg: '120px', xl: '220px' }
+        right: { xs: '5px', md: '80px', lg: '120px', xl: '220px' }
       }}
       aria-label="button"
     >
@@ -93,7 +93,7 @@ function SamplePrevArrow(props) {
           height: { md: 20, lg: 40, xl: '40px' },
           width: { md: 20, lg: 40, xl: '40px' }
         },
-        left: { xs: '50px', md: '80px', lg: '120px', xl: '220px' }
+        left: { xs: '5px', md: '80px', lg: '120px', xl: '220px' }
       }}
       aria-label="button"
     >
@@ -145,7 +145,7 @@ export default function PreBuildDashBoard() {
   return (
     <>
       <section aria-labelledby="a-carousel-of-ready-made-solutions">
-        <Grid container sx={{ justifyContent: 'center', px: 1.25, gap: 7.5 }}>
+        <Grid container sx={{ justifyContent: 'center', px: 1.25, gap: 7.5, px: { xs: 4, md: 0 } }}>
           <Grid sx={{ textAlign: 'center' }} size={{ xs: 12, md: 6 }}>
             <Grid container spacing={1.5}>
               <Grid size={12}>

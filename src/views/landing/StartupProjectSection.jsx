@@ -52,7 +52,7 @@ export default function RtlInfoSection() {
                 '& .slick-slider': {
                   textAlign: 'left',
                   '.MuiTypography-root': {
-                    fontSize: { xs: '1rem', sm: '1.563rem', md: '2.5rem', xl: '3.125rem' },
+                    fontSize: { xs: '1rem', sm: '1.563rem', md: '2.25rem', xl: '3rem' },
                     cursor: 'pointer'
                   }
                 }
@@ -66,114 +66,37 @@ export default function RtlInfoSection() {
                 }}
               >
                 <Typography
-                  variant="h6"
+                  variant="body1"
                   sx={{
                     color: '#fff',
                     width: 'max-content',
-                    fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem', xl: '2.7rem' },
-                    mt: { xs: 2.1, sm: 3.75, md: 7, xl: 7 }
+                    fontSize: { xs: '1rem', sm: '1.563rem', md: '2.25rem', xl: '3rem' },
+                    mt: { xs: 3, sm: 3.75, md: 5.5, xl: 7 }
                   }}
                 >
                   Planify —
                 </Typography>
               </Box>
               <Slider {...settings} >
-                <Typography
-                  variant="h4"
-                  sx={{
-                    color: 'text.hint',
-                    fontSize: { 
-                      xs: '1rem',   // 16px на мобильных
-                      sm: '1.25rem', // 20px
-                      md: '1.5rem',  // 24px
-                      xl: '2.7rem'   // 40px
-                    }
-                  }}
-                >
+                <Typography variant="body1">
                   Белорусский разработчик
                 </Typography>
-                <Typography
-                  variant="h4"
-                  sx={{
-                    color: 'text.hint',
-                    fontSize: { 
-                      xs: '1rem',   // 16px на мобильных
-                      sm: '1.25rem', // 20px
-                      md: '1.5rem',  // 24px
-                      xl: '2.7rem'   // 40px
-                    }
-                  }}
-                >
+                <Typography variant="body1">
                   Защита персональных данных
                 </Typography>
-                <Typography
-                  variant="h4"
-                  sx={{
-                    color: 'text.hint',
-                    fontSize: { 
-                      xs: '1rem',   // 16px на мобильных
-                      sm: '1.25rem', // 20px
-                      md: '1.5rem',  // 24px
-                      xl: '2.7rem'   // 40px
-                    }
-                  }}
-                >
+                <Typography variant="body1">
                   Конкурентные цены
                 </Typography>
-                <Typography
-                  variant="h4"
-                  sx={{
-                    color: 'text.hint',
-                    fontSize: { 
-                      xs: '1rem',   // 16px на мобильных
-                      sm: '1.25rem', // 20px
-                      md: '1.5rem',  // 24px
-                      xl: '2.7rem'   // 40px
-                    }
-                  }}
-                >
+                <Typography variant="body1">
                   Простота внедрения
                 </Typography>
-                <Typography
-                  variant="h4"
-                  sx={{
-                    color: 'text.hint',
-                    fontSize: { 
-                      xs: '1rem',   // 16px на мобильных
-                      sm: '1.25rem', // 20px
-                      md: '1.5rem',  // 24px
-                      xl: '2.7rem'   // 40px
-                    }
-                  }}
-                >
+                <Typography variant="body1">
                   Интуитивно понятный интерфейс
                 </Typography>
-                <Typography
-                  variant="h4"
-                  sx={{
-                    color: 'text.hint',
-                    fontSize: { 
-                      xs: '1rem',   // 16px на мобильных
-                      sm: '1.25rem', // 20px
-                      md: '1.5rem',  // 24px
-                      xl: '2.7rem'   // 40px
-                    }
-                  }}
-                >
+                <Typography variant="body1">
                   Подходит для любой компаний
                 </Typography>
-                <Typography
-                  variant="h4"
-                  sx={{
-                    color: 'text.hint',
-                    fontSize: { 
-                      xs: '1rem',   // 16px на мобильных
-                      sm: '1.25rem', // 20px
-                      md: '1.5rem',  // 24px
-                      xl: '2.7rem'   // 40px
-                    }
-                  }}
-                >
+                <Typography variant="body1">
                   Быстрая окупаемость
                 </Typography>
               </Slider>

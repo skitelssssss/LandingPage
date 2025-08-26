@@ -48,7 +48,7 @@ export default function HeaderSection() {
     () => (
       <HeaderAnimationImage
         src={mode === ThemeMode.DARK ? BgDark : BgLight}
-        alt="Berry"
+        alt="Planify"
         sx={{
           display: { xs: 'none', md: 'flex' },
           position: 'absolute',
@@ -66,80 +66,82 @@ export default function HeaderSection() {
 
   return (
     <section aria-labelledby="blank screen">
-      <Container sx={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <Grid
-          container
-          sx={{ justifyContent: 'space-between', alignItems: 'center', mt: { xs: 10, sm: 6, md: 18.75 }, mb: { xs: 2.5, md: 10 } }}
-        >
-          <Grid size={{ xs: 12, md: 5 }}>
-            <Grid container spacing={6}>
-              <Grid size={12}>
-                <motion.div
-                  initial={{ opacity: 0, translateY: 550 }}
-                  animate={{ opacity: 1, translateY: 0 }}
-                  transition={{ type: 'spring', stiffness: 150, damping: 30 }}
-                >
-                  <Stack spacing={1}>
-                    <Typography variant="h1" sx={{ textAlign: { xs: 'center', md: 'left' }, ...headerSX }}>
-                      Planify — управление выездным обслуживанием без лишней суеты
-                    </Typography>
-                  </Stack>
-                </motion.div>
-              </Grid>
-              <Grid sx={{ mt: -2.5, textAlign: { xs: 'center', md: 'left' } }} size={12}>
-                <motion.div
-                  initial={{ opacity: 0, translateY: 550 }}
-                  animate={{ opacity: 1, translateY: 0 }}
-                  transition={{ type: 'spring', stiffness: 150, damping: 30, delay: 0.2 }}
-                >
-                  <Typography
-                    variant="body1"
-                    sx={{ textAlign: { xs: 'center', md: 'left' }, color: 'text.primary', fontSize: { xs: '1rem', md: '1.125rem' } }}
+      <Box sx={{ height: { xs: '80vh', sm: '90vh', md: '100vh'}, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <Container sx={{ px: { xs: 4, md: 0 } }}>
+          <Grid
+            container
+            sx={{ justifyContent: 'space-between', alignItems: 'center', mt: { xs: 10, sm: 6, md: 18.75 }, mb: { xs: 2.5, md: 10 } }}
+          >
+            <Grid size={{ xs: 12, md: 5 }}>
+              <Grid container spacing={6}>
+                <Grid size={12}>
+                  <motion.div
+                    initial={{ opacity: 0, translateY: 550 }}
+                    animate={{ opacity: 1, translateY: 0 }}
+                    transition={{ type: 'spring', stiffness: 150, damping: 30 }}
                   >
-                    Добро пожаловать в Planify — умное решение для автоматизации выездного сервиса. Оптимизируйте процессы, сокращайте время и исключайте ошибки — всё в одном приложении
-                  </Typography>
-                </motion.div>
-              </Grid>
-              <Grid size={12}>
-                <motion.div
-                  initial={{ opacity: 0, translateY: 550 }}
-                  animate={{ opacity: 1, translateY: 0 }}
-                  transition={{ type: 'spring', stiffness: 150, damping: 30, delay: 0.4 }}
-                >
-                  <Grid container spacing={2} sx={{ justifyContent: { xs: 'center', md: 'flex-start' } }}>
-                    <Grid>
-                      <AnimateButton>
-                        <Button
-                          component={Link}
-                          to={DASHBOARD_PATH}
-                          target="_blank"
-                          size="large"
-                          variant="contained"
-                          color="secondary"
-                          startIcon={<PlayArrowIcon />}
-                          href="#"
-                          sx={{ borderRadius: '13px' }} 
-                        >
-                          Попробовать демо
-                        </Button>
-                      </AnimateButton>
+                    <Stack spacing={1}>
+                      <Typography variant="h1" sx={{ textAlign: { xs: 'center', md: 'left' }, ...headerSX }}>
+                        Planify — управление выездным обслуживанием без лишней суеты
+                      </Typography>
+                    </Stack>
+                  </motion.div>
+                </Grid>
+                <Grid sx={{ mt: -2.5, textAlign: { xs: 'center', md: 'left' } }} size={12}>
+                  <motion.div
+                    initial={{ opacity: 0, translateY: 550 }}
+                    animate={{ opacity: 1, translateY: 0 }}
+                    transition={{ type: 'spring', stiffness: 150, damping: 30, delay: 0.2 }}
+                  >
+                    <Typography
+                      variant="body1"
+                      sx={{ textAlign: { xs: 'center', md: 'left' }, color: 'text.primary', fontSize: { xs: '1rem', md: '1.125rem' } }}
+                    >
+                      Добро пожаловать в Planify — умное решение для автоматизации выездного сервиса. Оптимизируйте процессы, сокращайте время и исключайте ошибки — всё в одном приложении
+                    </Typography>
+                  </motion.div>
+                </Grid>
+                <Grid size={12}>
+                  <motion.div
+                    initial={{ opacity: 0, translateY: 550 }}
+                    animate={{ opacity: 1, translateY: 0 }}
+                    transition={{ type: 'spring', stiffness: 150, damping: 30, delay: 0.4 }}
+                  >
+                    <Grid container spacing={2} sx={{ justifyContent: { xs: 'center', md: 'flex-start' } }}>
+                      <Grid>
+                        <AnimateButton>
+                          <Button
+                            component={Link}
+                            to={DASHBOARD_PATH}
+                            target="_blank"
+                            size="large"
+                            variant="contained"
+                            color="secondary"
+                            startIcon={<PlayArrowIcon />}
+                            href="#"
+                            sx={{ borderRadius: '13px' }} 
+                          >
+                            Попробовать демо
+                          </Button>
+                        </AnimateButton>
+                      </Grid>
+                      <Grid>
+                        <FeedbackFormModal />
+                      </Grid>
                     </Grid>
-                    <Grid>
-                      <FeedbackFormModal />
-                    </Grid>
-                  </Grid>
-                </motion.div>
+                  </motion.div>
+                </Grid>
               </Grid>
             </Grid>
+            <Grid sx={{ display: { xs: 'none', md: 'flex' } }} size={{ xs: 12, md: 3.1 }}>
+              <Box sx={{ position: 'relative', mt: 8.75, zIndex: 9 }}>
+                <HeaderImage src={dashboard} alt="Planify ;(" />
+              </Box>
+              {HeaderAnimationImagememo}
+            </Grid>
           </Grid>
-          <Grid sx={{ display: { xs: 'none', md: 'flex' } }} size={{ xs: 12, md: 3.1 }}>
-            <Box sx={{ position: 'relative', mt: 8.75, zIndex: 9 }}>
-              <HeaderImage src={dashboard} alt="Planify ;(" />
-            </Box>
-            {HeaderAnimationImagememo}
-          </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </Box>  
     </section>
   );
 }
