@@ -19,7 +19,7 @@ import useConfig from 'hooks/useConfig';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import dashboard from 'assets/images/landing/hero-dashboard.svg';
 import BgLight from 'assets/images/landing/bg-hero-block-light.png';
-import FeedbackFormModal from './FeedbackFormModal';
+import FeedbackFormModal from '../FeedbackFormModal/FeedbackFormModal';
 
 const HeaderImage = styled('img')(({ theme }) => ({
   maxWidth: '73%',
@@ -65,9 +65,8 @@ export default function HeaderSection() {
   );
 
   return (
-    <section aria-labelledby="blank screen">
-      <Box sx={{ height: { xs: '80vh', sm: '90vh', md: '100vh'}, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <Container sx={{ px: { xs: 4, md: 0 } }}>
+      <Box sx={{ height: { xs: '89vh', sm: '90vh', md: '100vh'}, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <Container component="header"   sx={{px: { xs: 4, md: 0 }, position: 'sticky', top: 0 }}>
           <Grid
             container
             sx={{ justifyContent: 'space-between', alignItems: 'center', mt: { xs: 10, sm: 6, md: 18.75 }, mb: { xs: 2.5, md: 10 } }}
@@ -94,7 +93,7 @@ export default function HeaderSection() {
                     transition={{ type: 'spring', stiffness: 150, damping: 30, delay: 0.2 }}
                   >
                     <Typography
-                      variant="body1"
+                      variant="body2"
                       sx={{ textAlign: { xs: 'center', md: 'left' }, color: 'text.primary', fontSize: { xs: '1rem', md: '1.125rem' } }}
                     >
                       Добро пожаловать в Planify — умное решение для автоматизации выездного сервиса. Оптимизируйте процессы, сокращайте время и исключайте ошибки — всё в одном приложении
@@ -141,7 +140,5 @@ export default function HeaderSection() {
             </Grid>
           </Grid>
         </Container>
-      </Box>  
-    </section>
-  );
+      </Box>    );
 }

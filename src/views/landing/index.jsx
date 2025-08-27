@@ -1,21 +1,32 @@
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 
-import AppBar from 'ui-component/extended/AppBar';
-import HeaderSection from './HeaderSection';
-import FeatureSection from './FeatureSection';
-import PeopleSection from './PeopleSection';
-import FooterSection from './FooterSection';
-import CustomizeSection from './CustomizeSection';
-import PreBuildDashBoard from './PreBuildDashBoard';
-import StartupProjectSection from './StartupProjectSection';
-import FeatureProcess from './FeatureProcess';
-import CardSection from './CardSection';
+import AppBar from 'ui-component/extended/AppBar/AppBar';
+import HeaderSection from './Header/HeaderSection';
+import FeatureSection from './FeatureSection/FeatureSection';
+import PeopleSection from './FeedBack/PeopleSection';
+import FooterSection from './Footer/FooterSection';
+import CustomizeSection from './Opportunities/CustomizeSection';
+import PreBuildDashBoard from './DashBoard/PreBuildDashBoard';
+import StartupProjectSection from './Startup/StartupProjectSection';
+import ProcessScheme from './ProcessScheme/ProcessScheme';
+import PricingSection from './Pricing/PricingSection';
 
 import { ThemeMode } from 'config';
+import { styled } from '@mui/material/styles';
 
 export default function Landing() {
   const theme = useTheme();
+
+  const Section = styled(Box)(({ theme }) => ({
+    paddingTop: theme.spacing(12.5),
+    paddingBottom: theme.spacing(12.5),
+    bgcolor: 'background.default',
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: theme.spacing(10),
+      paddingBottom: theme.spacing(10),
+    }
+  }));
 
   return (
     <>
@@ -34,37 +45,36 @@ export default function Landing() {
         <AppBar />
         <HeaderSection />
       </Box>
+      
+      <Section component="section">
+        <ProcessScheme />
+      </Section>
 
-      {/* TODO: убрать дубли */}
-      <Box component="section" sx={{ py: 12.5, bgcolor: 'background.default' }}>
-        <FeatureProcess />
-      </Box>
-
-      <Box component="section" sx={{ py: 12.5, bgcolor: 'grey.100' }}>
+      <Section component="section" sx={{ bgcolor: 'grey.100' }}>
         <CustomizeSection />
-      </Box>
+      </Section>
 
-      <Box component="section" sx={{ py: 12.5, bgcolor: 'background.default' }}>
+      <Section component="section">
         <FeatureSection />
-      </Box>
+      </Section>
 
-      <Box id="decisions" component="section" sx={{ py: 12.5, bgcolor: 'grey.100' }}>
+      <Section id="decisions" component="section" sx={{ bgcolor: 'grey.100' }}>
         <PreBuildDashBoard />
-      </Box>
+      </Section>
 
-      <Box id="reviews" component="section" sx={{ py: 12.5, bgcolor: 'background.default' }}>
+      <Section id="reviews" component="section">
         <PeopleSection />
+      </Section>
+
+      <Box id="pricing" component="section" >
+        <PricingSection />
       </Box>
 
-      <Box id="pricing" component="section">
-        <CardSection />
-      </Box>
-
-      <Box component="footer" sx={{ py: 0 }}>
+      <Box component="footer">
         <StartupProjectSection />
       </Box>
 
-      <Box component="footer" sx={{ pb: 0 }}>
+      <Box component="footer">
         <FooterSection />
       </Box>
     </>

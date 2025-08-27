@@ -14,7 +14,7 @@ import PlaceIcon from '@mui/icons-material/Place';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
 import { useState } from 'react';
-import PrivacyPolicyModal from './PrivacyPolicyModal';
+import PrivacyPolicyModal from '../Privacy/PrivacyPolicyModal';
 
 export default function FooterSection() {
   const [open, setOpen] = useState(false);
@@ -25,7 +25,7 @@ export default function FooterSection() {
     <>
       <footer aria-labelledby="footer">
         <Box sx={{ bgcolor: 'dark.dark', py: { xs: 3, sm: 1.5 } }}>
-          <Container>
+          <Container component="footer">
             <Stack
               direction={{ xs: 'column', sm: 'row' }}
               alignItems="center"

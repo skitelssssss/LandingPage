@@ -144,8 +144,7 @@ export default function PreBuildDashBoard() {
 
   return (
     <>
-      <section aria-labelledby="a-carousel-of-ready-made-solutions">
-        <Grid container sx={{ justifyContent: 'center', px: 1.25, gap: 7.5, px: { xs: 4, md: 0 } }}>
+        <Grid component="section" id="decisions" container sx={{ justifyContent: 'center', gap: 7.5, px: { xs: 4, md: 0 } }}>
           <Grid sx={{ textAlign: 'center' }} size={{ xs: 12, md: 6 }}>
             <Grid container spacing={1.5}>
               <Grid size={12}>
@@ -195,7 +194,6 @@ export default function PreBuildDashBoard() {
             </Box>
           </Grid>
         </Grid>
-      </section>
     </>
   );
 }

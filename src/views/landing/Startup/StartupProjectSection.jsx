@@ -35,7 +35,7 @@ export default function RtlInfoSection() {
           position: 'relative'
         }}
       >
-        <Container sx={{ position: 'relative', zIndex: 1 }}>
+        <Container component="footer" sx={{ position: 'relative', zIndex: 1 }}>
           <Box sx={{ mt: { xs: 4, md: 6, lg: 12, xl: 15 }, zIndex: 2 }}>
             <Stack
               direction="row"
@@ -66,12 +66,13 @@ export default function RtlInfoSection() {
                 }}
               >
                 <Typography
-                  variant="body1"
+                  variant="h2"
                   sx={{
                     color: '#fff',
                     width: 'max-content',
                     fontSize: { xs: '1rem', sm: '1.563rem', md: '2.25rem', xl: '3rem' },
-                    mt: { xs: 3, sm: 3.75, md: 5.5, xl: 7 }
+                    mt: { xs: 3, sm: 3.75, md: 5.5, xl: 7 },
+                    fontWeight: 400
                   }}
                 >
                   Planify —

@@ -35,15 +35,15 @@ export default function PeopleCard({ id, name, image, tag, content, view }) {
             </Avatar>
           )}
           <Stack spacing={0}>
-            <Typography variant="h4" sx={{ fontWeight: 500 }}>
+            <Typography variant="h3" sx={{ fontWeight: 500, fontSize: '1rem' }}>
               {name}
             </Typography>
-            <Typography variant="subtitle1" sx={{ color: 'primary.main' }}>
+            <Typography variant="body2" sx={{ color: 'primary.main' }}>
               {tag}
             </Typography>
           </Stack>
         </Stack>
-        <Typography variant="body1">{content}</Typography>
+        <Typography variant="p">{content}</Typography>
       </Stack>
     </SubCard>
   );
