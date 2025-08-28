@@ -41,7 +41,7 @@ export default function MobileNavbar() {
               <Link sx={{ textDecoration: 'none' }} href="#decisions" target="_blank" onClick={handleScrollTo('decisions')}>
                 <ListItemButton>
                   <ListItemIcon>
-                    <IconBox size={20} color="secondary.main" />
+                    <IconBox />
                   </ListItemIcon>
                   <ListItemText primary="Приложение" />
                 </ListItemButton>
@@ -49,7 +49,7 @@ export default function MobileNavbar() {
               <Link sx={{ textDecoration: 'none' }} href="#reviews" target="_blank" onClick={handleScrollTo('reviews')}>
                 <ListItemButton>
                   <ListItemIcon>
-                    <IconFriends size={20} color="secondary.main" />
+                    <IconFriends />
                   </ListItemIcon>
                   <ListItemText primary="Отзывы" />
                 </ListItemButton>
@@ -57,7 +57,7 @@ export default function MobileNavbar() {
               <Link sx={{ textDecoration: 'none' }} href="#pricing" target="_blank" onClick={handleScrollTo('pricing')}>
                 <ListItemButton>
                   <ListItemIcon>
-                    <IconBasketDollar size={20} color="secondary.main" />
+                    <IconBasketDollar />
                   </ListItemIcon>
                   <ListItemText primary="Тарифы" />
                 </ListItemButton>
@@ -73,7 +73,8 @@ export default function MobileNavbar() {
                   borderRadius: '13px',
                   marginLeft: '13px',
                   mt: '7px',
-                  mb: '9px'
+                  mb: '9px',
+                  textTransform: 'none'
                 }}
               >
                 Купить сейчас

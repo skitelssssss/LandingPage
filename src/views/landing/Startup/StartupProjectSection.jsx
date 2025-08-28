@@ -25,7 +25,6 @@ export default function RtlInfoSection() {
   };
 
   return (
-    <footer aria-labelledby="planify-it">
       <Box
         className="project-info"
         sx={{
@@ -35,7 +34,7 @@ export default function RtlInfoSection() {
           position: 'relative'
         }}
       >
-        <Container component="footer" sx={{ position: 'relative', zIndex: 1 }}>
+        <Container component="footer" sx={{ position: 'relative', zIndex: 1, px: { xs: 4, md: 4 } }}>
           <Box sx={{ mt: { xs: 4, md: 6, lg: 12, xl: 15 }, zIndex: 2 }}>
             <Stack
               direction="row"
@@ -118,6 +117,5 @@ export default function RtlInfoSection() {
           }}
         />
       </Box>
-    </footer>
   );
 }

@@ -22,7 +22,7 @@ export default function DesktopNavbar() {
         disableElevation
         variant="contained"
         color="secondary"
-        sx={{ borderRadius: '13px' }}
+        sx={{ borderRadius: '13px', textTransform: 'none' }}
         onClick={handleScrollTo('home')}
       >
         Купить сейчас

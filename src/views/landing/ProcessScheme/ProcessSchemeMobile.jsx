@@ -37,7 +37,7 @@ export default function ProcessSchemeMobile({ visibleElements, imagesLoaded }) {
             src={ProcessImage}
             alt="Процессы"
             style={{
-              width: 'clamp(80px, 20vw, 150px)',
+              width: '120px',
               height: 'auto',
               aspectRatio: '1',
             }}
@@ -87,7 +87,7 @@ export default function ProcessSchemeMobile({ visibleElements, imagesLoaded }) {
             src={PlanningImage}
             alt="Планирование"
             style={{
-              width: 'clamp(80px, 20vw, 150px)',
+              width: '120px',
               height: 'auto',
               aspectRatio: '1',
             }}
@@ -118,7 +118,7 @@ export default function ProcessSchemeMobile({ visibleElements, imagesLoaded }) {
           position: 'absolute',
           top: '51%',
           left: '50%',
-          transform: 'translate(-50%, -50%)',
+          transform: { xs: 'translate(-30%, -50%)', md: 'translate(-50%, -50%)' },
           pointerEvents: 'none',
         }}
       >
@@ -156,7 +156,7 @@ export default function ProcessSchemeMobile({ visibleElements, imagesLoaded }) {
             src={ControlImage}
             alt="Контроль"
             style={{
-              width: 'clamp(80px, 20vw, 150px)',
+              width: '120px',
               height: 'auto',
               aspectRatio: '1',
             }}
@@ -206,7 +206,7 @@ export default function ProcessSchemeMobile({ visibleElements, imagesLoaded }) {
             src={ResultImage}
             alt="Результат"
             style={{
-              width: 'clamp(80px, 20vw, 150px)',
+              width: '120px',
               height: 'auto',
               aspectRatio: '1',
             }}

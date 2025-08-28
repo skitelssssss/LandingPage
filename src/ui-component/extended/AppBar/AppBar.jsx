@@ -40,7 +40,7 @@ export default function AppBar({ ...others }) {
           }}
         >
         <Container component="section">
-          <Toolbar sx={{ py: 2.5, px: `0 !important` }}>
+          <Toolbar sx={{ py: 1.7, px: `0 !important` }}>
             <Typography
               component="div"
               sx={{ flexGrow: 1, textAlign: 'left', cursor: 'pointer' }}

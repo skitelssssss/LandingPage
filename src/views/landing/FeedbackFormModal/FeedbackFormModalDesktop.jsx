@@ -9,7 +9,7 @@ import {
   Link,
 } from '@mui/material';
 
-const FeedbackFormModalDesktop = ({ open, onClose, onSubmit, formData, setFormData, agreed, setAgreed, errors }) => {
+const FeedbackFormModalDesktop = ({ open, onClose, onSubmit, formData, setFormData, agreed, setAgreed, errors, setOpenPolicy }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -124,7 +124,9 @@ const FeedbackFormModalDesktop = ({ open, onClose, onSubmit, formData, setFormDa
                   <Link
                     component="button"
                     type="button"
-                    onClick={(e) => e.stopPropagation()}
+                    onClick={(e) =>{ e.stopPropagation();
+                      setOpenPolicy(true);
+                    }}
                     color="secondary"
                     sx={{ textDecoration: 'underline', background: 'none', border: 'none', cursor: 'pointer' }}
                   >

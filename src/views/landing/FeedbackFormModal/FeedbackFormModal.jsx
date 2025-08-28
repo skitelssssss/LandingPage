@@ -86,8 +86,9 @@ const FeedbackFormModal = () => {
       <Button
         onClick={handleOpen}
         size="large"
-        variant="text"
+        variant="outlined"
         color="text.primary"
+        sx={{ borderRadius: '13px', textTransform: 'none'}}
       >
         Связаться с нами
       </Button>
@@ -101,6 +102,8 @@ const FeedbackFormModal = () => {
         agreed={agreed}
         setAgreed={setAgreed}
         errors={errors}
+        setOpenPolicy={setOpenPolicy}
+
       />
 
       <PrivacyPolicyModal open={openPolicy} onClose={() => setOpenPolicy(false)} />

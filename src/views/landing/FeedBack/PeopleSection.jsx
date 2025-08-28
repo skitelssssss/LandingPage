@@ -25,7 +25,7 @@ export default function PeopleSection() {
   }
 
   return (
-      <Container component="section"sx={{ px: { xs: 4, md: 0 } }}>
+      <Container component="section"sx={{ px: { xs: 4, md: 4 } }}>
         <Grid container spacing={3.5} sx={{ justifyContent: 'center' }}>
           <Grid sx={{ textAlign: 'center' }} size={12}>
             <Stack spacing={1.25} sx={{ alignItems: 'center' }}>
@@ -39,8 +39,8 @@ export default function PeopleSection() {
           </Grid>
 
             <Grid size={12}>
-              <Stack spacing={2} sx={{ alignItems: 'center', mt: 4 }}>
-                <Masonry component="article" columns={{ xs: 1, sm: 2, md: 3, xl: 4 }} spacing={2}>
+              <Stack spacing={2} sx={{ alignItems: 'center' }}>
+                <Masonry component="article" columns={{ xs: 1, sm: 2, md: 3, xl: 4 }} spacing={4} >
                   {cardResult}
                 </Masonry>
               </Stack>

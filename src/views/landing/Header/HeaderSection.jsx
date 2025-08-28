@@ -66,12 +66,12 @@ export default function HeaderSection() {
 
   return (
       <Box sx={{ height: { xs: '89vh', sm: '90vh', md: '100vh'}, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <Container component="header"   sx={{px: { xs: 4, md: 0 }, position: 'sticky', top: 0 }}>
+        <Container component="header"   sx={{px: { xs: 4, md: 4 }, position: 'sticky', top: 0 }}>
           <Grid
             container
             sx={{ justifyContent: 'space-between', alignItems: 'center', mt: { xs: 10, sm: 6, md: 18.75 }, mb: { xs: 2.5, md: 10 } }}
           >
-            <Grid size={{ xs: 12, md: 5 }}>
+            <Grid size={{ xs: 12, md: 5,  }}>
               <Grid container spacing={6}>
                 <Grid size={12}>
                   <motion.div
@@ -118,7 +118,7 @@ export default function HeaderSection() {
                             color="secondary"
                             startIcon={<PlayArrowIcon />}
                             href="#"
-                            sx={{ borderRadius: '13px' }} 
+                            sx={{ borderRadius: '13px', textTransform: 'none' }} 
                           >
                             Попробовать демо
                           </Button>

@@ -22,7 +22,7 @@ export default function PricingPlans() {
           position: 'relative'
         }}
       >
-        <Container component="section" sx={{ px: { xs: 4, md: 0 } }}>
+        <Container component="section" sx={{ px: { xs: 4, md: 4 } }}>
           <Grid container spacing={3} justifyContent="center" textAlign="center" sx={{ mb: 6 }}>
             <Grid size={12}>
               <Typography
@@ -47,7 +47,7 @@ export default function PricingPlans() {
             </Grid>
           </Grid>
 
-          <Grid container spacing={{ xs: 4, sm: 5 }} justifyContent="center">
+          <Grid container spacing={{ xs: 4, sm: 4 }} justifyContent="center">
             {pricingPlans.map((plan) => (
               <Grid key={plan.id} size={{ md: 4, sm: 6, xs: 12 }}>
                 <FadeInWhenVisible>
