@@ -36,7 +36,7 @@ export default function AppBar({ ...others }) {
   return (
     <ElevationScroll {...others}>
       <MuiAppBar sx={{
-            zIndex: 1,
+            zIndex: 0.5,
           }}
         >
         <Container component="section">

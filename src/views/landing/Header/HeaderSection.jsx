@@ -9,11 +9,11 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
-import { motion } from 'framer-motion';
+import { motion, transform } from 'framer-motion';
 
 import AnimateButton from 'ui-component/extended/AnimateButton';
 
-import { ThemeDirection, ThemeMode, DASHBOARD_PATH } from 'config';
+import { ThemeMode, DASHBOARD_PATH } from 'config';
 import useConfig from 'hooks/useConfig';
 
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
@@ -23,15 +23,13 @@ import FeedbackFormModal from '../FeedbackFormModal/FeedbackFormModal';
 
 const HeaderImage = styled('img')(({ theme }) => ({
   maxWidth: '73%',
-  borderRadius: 20,
-  transform: theme.direction === 'rtl' ? 'scale(1.63)' : 'scale(1.55)',
-  transformOrigin: theme.direction === 'rtl' ? '100% 50%' : '0 50%',
-  [theme.breakpoints.down('xl')]: {
-    transform: 'scale(1.5)'
-  },
-  [theme.breakpoints.down('lg')]: {
-    transform: 'scale(1.2)'
-  }
+  zIndex: 1,
+  position: 'absolute',
+  bottom: 0,
+  right: 0,
+  transform: 'translate(-20%, -20%)',
+  [theme.breakpoints.up('lg')]: {transform: 'translate(-70%, -25%)'},
+  [theme.breakpoints.down('md')]: { display: 'none',}
 }));
 
 const HeaderAnimationImage = styled('img')({
@@ -53,11 +51,9 @@ export default function HeaderSection() {
           display: { xs: 'none', md: 'flex' },
           position: 'absolute',
           filter: 'none',
-          bottom: { md: 0 },
+          bottom: 0,
           right: 0,
-          width: '50%',
-          transformOrigin: '50% 50%',
-          transform: themeDirection === ThemeDirection.RTL ? 'rotateY(180deg)' : 'rotateY(0deg)'
+          maxHeight: '70%',
         }}
       />
     ),
@@ -65,8 +61,8 @@ export default function HeaderSection() {
   );
 
   return (
-      <Box sx={{ height: { xs: '89vh', sm: '90vh', md: '100vh'}, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <Container component="header"   sx={{px: { xs: 4, md: 4 }, position: 'sticky', top: 0 }}>
+      <Box sx={{ height: { xs: '89vh', sm: '90vh', md: '100vh'}, display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative' }}>
+        <Container component="header" sx={{px: { xs: 4, md: 4 } }}>
           <Grid
             container
             sx={{ justifyContent: 'space-between', alignItems: 'center', mt: { xs: 10, sm: 6, md: 18.75 }, mb: { xs: 2.5, md: 10 } }}
@@ -118,7 +114,7 @@ export default function HeaderSection() {
                             color="secondary"
                             startIcon={<PlayArrowIcon />}
                             href="#"
-                            sx={{ borderRadius: '13px', textTransform: 'none' }} 
+                            sx={{ borderRadius: '13px', textTransform: 'none', zIndex: '1' }} 
                           >
                             Попробовать демо
                           </Button>
@@ -132,13 +128,14 @@ export default function HeaderSection() {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid sx={{ display: { xs: 'none', md: 'flex' } }} size={{ xs: 12, md: 3.1 }}>
-              <Box sx={{ position: 'relative', mt: 8.75, zIndex: 9 }}>
+            {/* <Grid sx={{ display: {xs:'none', md: 'flex', xl: 'flex'}, mt: {md: -60, xl: -60}, mr: {md: -10} }} size={{ md:5, xl:5  }}> */}
+              {/* <Box sx={{ position: 'absolute', zIndex: 1 }}> */}
                 <HeaderImage src={dashboard} alt="Planify ;(" />
-              </Box>
+              {/* </Box> */}
               {HeaderAnimationImagememo}
-            </Grid>
+            {/* </Grid> */}
           </Grid>
         </Container>
-      </Box>    );
+      </Box>    
+    );
 }

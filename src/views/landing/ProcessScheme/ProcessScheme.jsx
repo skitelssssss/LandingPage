@@ -80,7 +80,7 @@ export default function ProcessScheme() {
   };
 
   return (
-      <Container component="section" id="process-scheme" sx={{ px: { xs: 4, md: 0 } }}>
+      <Container component="section" id="process-scheme" sx={{ px: { xs: 4, md: 4 } }}>
         <FadeInWhenVisible>
           <Typography
             variant="h2"

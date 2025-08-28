@@ -32,7 +32,6 @@ export default function Landing() {
     <>
       <Box
         id="home"
-        component="header"
         sx={{
           overflowX: 'hidden',
           overflowY: 'clip',
@@ -42,8 +41,8 @@ export default function Landing() {
               : `linear-gradient(360deg, ${theme.palette.grey[100]} 1.09%, ${theme.palette.background.paper} 100%)`
         }}
       >
-        <AppBar />
-        <HeaderSection />
+        <AppBar cmponent="section"/>
+        <HeaderSection component="header"/>
       </Box>
       
       <Section component="section">
