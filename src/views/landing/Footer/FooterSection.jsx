@@ -1,4 +1,4 @@
-import { 
+import {
   Container,
   IconButton,
   Typography,
@@ -21,6 +21,7 @@ export default function FooterSection() {
 
   return (
     <>
+      //TODO: component='footer'
       <footer aria-labelledby="footer">
         <Box sx={{ bgcolor: 'dark.dark', py: { xs: 3, sm: 1.5 } }}>
           <Container component="footer">

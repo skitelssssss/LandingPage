@@ -8,6 +8,7 @@ import Slider from 'react-slick';
 
 import BackgroundImag from 'assets/images/landing/bg-heand.png';
 
+// TODO: имя файла = имя компонента
 export default function RtlInfoSection() {
   const settings = {
     className: 'center',

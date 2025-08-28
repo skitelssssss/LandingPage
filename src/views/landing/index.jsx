@@ -15,6 +15,7 @@ import PricingSection from './Pricing/PricingSection';
 import { ThemeMode } from 'config';
 import { styled } from '@mui/material/styles';
 
+// TODO: дважды создается PrivacyPolicy Modal
 export default function Landing() {
   const theme = useTheme();
 
@@ -45,7 +46,7 @@ export default function Landing() {
         <AppBar />
         <HeaderSection />
       </Box>
-      
+
       <Section component="section">
         <ProcessScheme />
       </Section>

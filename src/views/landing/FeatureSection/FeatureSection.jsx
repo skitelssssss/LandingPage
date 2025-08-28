@@ -29,7 +29,7 @@ export default function FeatureSection() {
             </Grid>
           </Grid>
         </Grid>
-
+        // TODO: это не отдельные компоненты
         <Grid size={12}>
           <Grid container spacing={4} sx={{ justifyContent: 'center' }}>
             <Grid size={{ md: 4.9, sm: 6 }}>

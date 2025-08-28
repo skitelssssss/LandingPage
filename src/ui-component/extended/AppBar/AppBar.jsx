@@ -35,10 +35,11 @@ function ElevationScroll({ children, window }) {
 export default function AppBar({ ...others }) {
   return (
     <ElevationScroll {...others}>
-      <MuiAppBar sx={{
-            zIndex: 1,
-          }}
-        >
+      <MuiAppBar
+        sx={{
+          zIndex: 1,
+        }}
+      >
         <Container component="section">
           <Toolbar sx={{ py: 1.7, px: `0 !important` }}>
             <Typography

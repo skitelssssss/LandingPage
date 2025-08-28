@@ -53,7 +53,7 @@ export default function ProcessScheme() {
         const img = new Image();
         img.onload = resolve;
         img.onerror = reject;
-        img.src = src; 
+        img.src = src;
       });
     });
 
@@ -99,6 +99,7 @@ export default function ProcessScheme() {
           </Typography>
         </FadeInWhenVisible>
 
+        {/* TODO: опять два разных компонента, перегруженный код и дом для одного и того же контента, для позиционирования на адаптиве есть стили */}
         <ProcessSchemeDesktop component="article" visibleElements={visibleElements} imagesLoaded={imagesLoaded} />
         <ProcessSchemeMobile component="article" visibleElements={visibleElements} imagesLoaded={imagesLoaded} />
       </Container>

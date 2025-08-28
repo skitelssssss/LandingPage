@@ -130,7 +130,7 @@ const FeedbackFormModalDesktop = ({ open, onClose, onSubmit, formData, setFormDa
                     color="secondary"
                     sx={{ textDecoration: 'underline', background: 'none', border: 'none', cursor: 'pointer' }}
                   >
-                    (политика конфиденциальности)
+                    политика конфиденциальности
                   </Link>
                 </Typography>
               }

@@ -3,7 +3,9 @@ import { IconCircleCheck } from '@tabler/icons-react';
 import CardMedia from '@mui/material/CardMedia';
 import LayerLeft from 'assets/images/landing/customization-left.png';
 
+// TODO: имя файла = имя компонента
 export default function AllowSection() {
+  // TODO: повторяшка, styled component
   const listSX = {
     display: 'flex',
     gap: '0.7rem',

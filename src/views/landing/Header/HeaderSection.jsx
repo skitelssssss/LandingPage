@@ -21,6 +21,7 @@ import dashboard from 'assets/images/landing/hero-dashboard.svg';
 import BgLight from 'assets/images/landing/bg-hero-block-light.png';
 import FeedbackFormModal from '../FeedbackFormModal/FeedbackFormModal';
 
+// TODO: стилизованные компоненты живут рядом в файле *.styled.jsx
 const HeaderImage = styled('img')(({ theme }) => ({
   maxWidth: '73%',
   borderRadius: 20,
@@ -39,10 +40,10 @@ const HeaderAnimationImage = styled('img')({
   filter: 'drop-shadow(0px 0px 50px rgb(33 150 243 / 30%))'
 });
 
+const headerSX = { fontSize: { xs: '2rem', sm: '3rem', md: '3.5rem', lg: '3.5rem' } };
+
 export default function HeaderSection() {
   const { mode, themeDirection } = useConfig();
-
-  const headerSX = { fontSize: { xs: '2rem', sm: '3rem', md: '3.5rem', lg: '3.5rem' } };
 
   const HeaderAnimationImagememo = useMemo(
     () => (
@@ -66,14 +67,15 @@ export default function HeaderSection() {
 
   return (
       <Box sx={{ height: { xs: '89vh', sm: '90vh', md: '100vh'}, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <Container component="header"   sx={{px: { xs: 4, md: 4 }, position: 'sticky', top: 0 }}>
+        <Container component="header" sx={{px: { xs: 4, md: 4 }, position: 'sticky', top: 0 }}>
           <Grid
             container
             sx={{ justifyContent: 'space-between', alignItems: 'center', mt: { xs: 10, sm: 6, md: 18.75 }, mb: { xs: 2.5, md: 10 } }}
           >
-            <Grid size={{ xs: 12, md: 5,  }}>
+            <Grid size={{ xs: 12, md: 5 }}>
               <Grid container spacing={6}>
                 <Grid size={12}>
+                  {/* TODO: повторяшки можно вынести */}
                   <motion.div
                     initial={{ opacity: 0, translateY: 550 }}
                     animate={{ opacity: 1, translateY: 0 }}
@@ -118,7 +120,7 @@ export default function HeaderSection() {
                             color="secondary"
                             startIcon={<PlayArrowIcon />}
                             href="#"
-                            sx={{ borderRadius: '13px', textTransform: 'none' }} 
+                            sx={{ borderRadius: '13px', textTransform: 'none' }}
                           >
                             Попробовать демо
                           </Button>
@@ -140,5 +142,6 @@ export default function HeaderSection() {
             </Grid>
           </Grid>
         </Container>
-      </Box>    );
+      </Box>
+  );
 }

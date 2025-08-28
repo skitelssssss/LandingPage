@@ -13,6 +13,7 @@ const FeedbackFormModal = () => {
 
   const [open, setOpen] = useState(false);
   const [openPolicy, setOpenPolicy] = useState(false);
+  // TODO: не повторяйся
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -79,10 +80,12 @@ const FeedbackFormModal = () => {
     setSnackbar(prev => ({ ...prev, open: false }));
   };
 
+  // TODO: А зачем два одинаковых компонента? Адааааптив
   const ModalComponent = isMobile ? FeedbackFormModalMobile : FeedbackFormModalDesktop;
 
   return (
     <>
+      {/* TODO: Кнопка не относится к модалке */}
       <Button
         onClick={handleOpen}
         size="large"
@@ -106,8 +109,10 @@ const FeedbackFormModal = () => {
 
       />
 
+      {/*TODO:  лучше возьми за практику объявлять функции отдельно. Каждый рендер = новая ссылка */}
       <PrivacyPolicyModal open={openPolicy} onClose={() => setOpenPolicy(false)} />
 
+      {/* TODO: алерт не должен жить в форме, у нас есть контекст */}
       <Snackbar
         open={snackbar.open}
         autoHideDuration={3000}

@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, useMediaQuery } from '@mui/material';
 
 import ProcessImage from 'assets/images/landing/process.png';
 import PlanningImage from 'assets/images/landing/planning.png';
@@ -9,6 +9,7 @@ import ArrowUp from 'assets/images/landing/arrow-up.png';
 import ArrowLeft from 'assets/images/landing/arrow-left.png';
 
 export default function ProcessSchemeMobile({ visibleElements, imagesLoaded }) {
+  // TODO: isMobile
   return (
     <Box
       sx={{
@@ -19,7 +20,7 @@ export default function ProcessSchemeMobile({ visibleElements, imagesLoaded }) {
         position: 'relative',
         px: 2,
         width: '100%',
-        overflow: 'hidden', 
+        overflow: 'hidden',
       }}
     >
       <Box
