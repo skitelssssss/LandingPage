@@ -21,7 +21,6 @@ export default function FooterSection() {
 
   return (
     <>
-      <footer aria-labelledby="footer">
         <Box sx={{ bgcolor: 'dark.dark', py: { xs: 3, sm: 1.5 } }}>
           <Container component="footer">
             <Stack
@@ -73,7 +72,6 @@ export default function FooterSection() {
             </Stack>
           </Container>
         </Box>
-      </footer>
 
       <PrivacyPolicyModal open={open} onClose={handleClose}/>
     </>

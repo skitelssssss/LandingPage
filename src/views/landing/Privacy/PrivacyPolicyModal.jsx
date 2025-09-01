@@ -2,7 +2,7 @@ import { Modal, Box, Typography, Button } from '@mui/material';
 
 const PrivacyPolicyModal = ({ open, onClose }) => {
   return (
-    <Modal open={open} onClose={onClose} aria-labelledby="modal-title" aria-describedby="modal-description">
+    <Modal open={open} onClose={onClose}>
       <Box
         sx={{
           position: 'absolute',

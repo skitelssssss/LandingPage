@@ -1,16 +1,14 @@
 import { useState } from 'react';
 import { Button } from '@mui/material';
-import { useMediaQuery } from '@mui/material';
-import FeedbackFormModalDesktop from './FeedbackFormModalDesktop';
-import FeedbackFormModalMobile from './FeedbackFormModalMobile';
+import FeedbackFormModalAll from './FeedbackFormModalAll';
 import PrivacyPolicyModal from '../Privacy/PrivacyPolicyModal';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 import CheckIcon from '@mui/icons-material/Check';
+import { useMediaQuery } from '@mui/material';
 
 const FeedbackFormModal = () => {
   const isMobile = useMediaQuery('(max-width:600px)');
-
   const [open, setOpen] = useState(false);
   const [openPolicy, setOpenPolicy] = useState(false);
   const [formData, setFormData] = useState({
@@ -79,8 +77,6 @@ const FeedbackFormModal = () => {
     setSnackbar(prev => ({ ...prev, open: false }));
   };
 
-  const ModalComponent = isMobile ? FeedbackFormModalMobile : FeedbackFormModalDesktop;
-
   return (
     <>
       <Button
@@ -88,12 +84,12 @@ const FeedbackFormModal = () => {
         size="large"
         variant="outlined"
         color="text.primary"
-        sx={{ borderRadius: '13px', textTransform: 'none'}}
+        sx={{ borderRadius: '13px', textTransform: 'none', zIndex: 1}}
       >
         Связаться с нами
       </Button>
 
-      <ModalComponent
+      <FeedbackFormModalAll
         open={open}
         onClose={handleClose}
         onSubmit={handleSubmit}
@@ -103,7 +99,7 @@ const FeedbackFormModal = () => {
         setAgreed={setAgreed}
         errors={errors}
         setOpenPolicy={setOpenPolicy}
-
+        sMobile={isMobile}
       />
 
       <PrivacyPolicyModal open={openPolicy} onClose={() => setOpenPolicy(false)} />

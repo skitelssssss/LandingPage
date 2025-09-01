@@ -1,8 +1,8 @@
 import { useTheme } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
-import { IconChevronRight } from '@tabler/icons-react';
+import { IconChevronLeft } from '@tabler/icons-react';
 
-function SampleNextArrow(props) {
+function SamplePrevArrow(props) {
   const theme = useTheme();
   const { onClickHandler } = props;
 
@@ -31,13 +31,13 @@ function SampleNextArrow(props) {
           height: { md: 20, lg: 40, xl: '40px' },
           width: { md: 20, lg: 40, xl: '40px' }
         },
-        right: { xs: '5px', md: '80px', lg: '120px', xl: '220px' }
+        left: { xs: '5px', md: '80px', lg: '120px', xl: '220px' }
       }}
       aria-label="button"
     >
-      <IconChevronRight fontSize={25} color={theme.palette.grey[900]} />
+      <IconChevronLeft fontSize={25} color={theme.palette.grey[900]} />
     </IconButton>
   );
 }
 
-export default SampleNextArrow;
+export default SamplePrevArrow;

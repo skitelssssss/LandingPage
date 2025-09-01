@@ -9,7 +9,8 @@ import {
   Link,
 } from '@mui/material';
 
-const FeedbackFormModalDesktop = ({ open, onClose, onSubmit, formData, setFormData, agreed, setAgreed, errors, setOpenPolicy }) => {
+export default function FeedbackFormModalAll ({ open, onClose, onSubmit, formData, setFormData, agreed, setAgreed, errors, setOpenPolicy }) {
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -160,5 +161,3 @@ const FeedbackFormModalDesktop = ({ open, onClose, onSubmit, formData, setFormDa
     </Modal>
   );
 };
-
-export default FeedbackFormModalDesktop;

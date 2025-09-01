@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 
-import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -9,7 +8,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
-import { motion, transform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import AnimateButton from 'ui-component/extended/AnimateButton';
 
@@ -20,22 +19,8 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import dashboard from 'assets/images/landing/hero-dashboard.svg';
 import BgLight from 'assets/images/landing/bg-hero-block-light.png';
 import FeedbackFormModal from '../FeedbackFormModal/FeedbackFormModal';
-
-const HeaderImage = styled('img')(({ theme }) => ({
-  maxWidth: '73%',
-  zIndex: 1,
-  position: 'absolute',
-  bottom: 0,
-  right: 0,
-  transform: 'translate(-20%, -20%)',
-  [theme.breakpoints.up('lg')]: {transform: 'translate(-70%, -25%)'},
-  [theme.breakpoints.down('md')]: { display: 'none',}
-}));
-
-const HeaderAnimationImage = styled('img')({
-  maxWidth: '100%',
-  filter: 'drop-shadow(0px 0px 50px rgb(33 150 243 / 30%))'
-});
+import HeaderImage from './HeaderImage'
+import HeaderAnimationImage from './HeaderAnimationImage';
 
 export default function HeaderSection() {
   const { mode, themeDirection } = useConfig();
@@ -108,7 +93,6 @@ export default function HeaderSection() {
                           <Button
                             component={Link}
                             to={DASHBOARD_PATH}
-                            target="_blank"
                             size="large"
                             variant="contained"
                             color="secondary"
@@ -128,12 +112,8 @@ export default function HeaderSection() {
                 </Grid>
               </Grid>
             </Grid>
-            {/* <Grid sx={{ display: {xs:'none', md: 'flex', xl: 'flex'}, mt: {md: -60, xl: -60}, mr: {md: -10} }} size={{ md:5, xl:5  }}> */}
-              {/* <Box sx={{ position: 'absolute', zIndex: 1 }}> */}
                 <HeaderImage src={dashboard} alt="Planify ;(" />
-              {/* </Box> */}
               {HeaderAnimationImagememo}
-            {/* </Grid> */}
           </Grid>
         </Container>
       </Box>    

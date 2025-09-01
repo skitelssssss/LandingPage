@@ -2,19 +2,9 @@ import { Grid, Typography } from '@mui/material';
 import { IconCircleCheck } from '@tabler/icons-react';
 import CardMedia from '@mui/material/CardMedia';
 import LayerRight from 'assets/images/landing/customization-right.png';
+import listSX from './listSX';
 
 export default function FeaturesSection() {
-  const listSX = {
-    display: 'flex',
-    gap: '0.7rem',
-    padding: '10px 0',
-    fontSize: '1rem',
-    color: 'grey.900',
-    svg: { color: 'secondary.main', minWidth: 20 },
-    overflowWrap: 'break-word',
-    wordBreak: 'break-word'
-  };
-
   return (
     <Grid container spacing={2.5} direction={{ xs: 'column-reverse', md: 'row' }}>
       <Grid size={{ xs: 12, md: 6 }}>

@@ -1,6 +1,6 @@
 import { Container, Grid } from '@mui/material';
 
-import AutomateSection from './AllowSection';
+import AllowSection from './AllowSection';
 import FeaturesSection from './FeaturesSection';
 
 export default function CustomizeSection() {
@@ -9,7 +9,7 @@ export default function CustomizeSection() {
         <Grid container spacing={{ xs: 3, sm: 4, md: 5 }} justifyContent="center">
           
           <Grid size={12}>
-            <AutomateSection component="article" />
+            <AllowSection component="article" />
           </Grid>
 
           <Grid size={12}>
