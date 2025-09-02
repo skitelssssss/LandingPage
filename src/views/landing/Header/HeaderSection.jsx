@@ -22,7 +22,7 @@ import FeedbackFormModal from '../FeedbackFormModal/FeedbackFormModal';
 import HeaderImage from './HeaderImage'
 import HeaderAnimationImage from './HeaderAnimationImage';
 
-export default function HeaderSection() {
+export default function HeaderSection( {onPrivacyPolicyOpen} ) {
   const { mode, themeDirection } = useConfig();
 
   const headerSX = { fontSize: { xs: '2rem', sm: '3rem', md: '3.5rem', lg: '3.5rem' } };
@@ -105,7 +105,7 @@ export default function HeaderSection() {
                         </AnimateButton>
                       </Grid>
                       <Grid>
-                        <FeedbackFormModal />
+                        <FeedbackFormModal onPrivacyPolicyOpen={onPrivacyPolicyOpen} />
                       </Grid>
                     </Grid>
                   </motion.div>

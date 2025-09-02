@@ -1,24 +1,10 @@
-import { 
-  Container,
-  IconButton,
-  Typography,
-  Stack,
-  Link,
-  Box,
-} from '@mui/material';
+import { Container, IconButton, Typography, Stack, Link, Box } from '@mui/material';
 
 import EmailIcon from '@mui/icons-material/Email';
 import PlaceIcon from '@mui/icons-material/Place';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
-import { useState } from 'react';
-import PrivacyPolicyModal from '../Privacy/PrivacyPolicyModal';
-
-export default function FooterSection() {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
+export default function FooterSection({onPrivacyPolicyOpen}) {
   return (
     <>
         <Box sx={{ bgcolor: 'dark.dark', py: { xs: 3, sm: 1.5 } }}>
@@ -37,7 +23,7 @@ export default function FooterSection() {
                   </Link>
                 </Typography>
                 <Typography variant="caption" color="text.secondary">
-                  <Link component="button" onClick={handleOpen} underline="hover" sx={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit' }}>
+                  <Link component="button" onClick={onPrivacyPolicyOpen} underline="hover" sx={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit' }}>
                     Политика обработки персональных данных
                   </Link>
                 </Typography>
@@ -72,8 +58,6 @@ export default function FooterSection() {
             </Stack>
           </Container>
         </Box>
-
-      <PrivacyPolicyModal open={open} onClose={handleClose}/>
     </>
   );
 }

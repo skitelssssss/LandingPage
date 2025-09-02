@@ -9,7 +9,7 @@ import {
   Link,
 } from '@mui/material';
 
-export default function FeedbackFormModalAll ({ open, onClose, onSubmit, formData, setFormData, agreed, setAgreed, errors, setOpenPolicy }) {
+export default function FeedbackFormModalAll ({ open, onClose, onSubmit, formData, setFormData, agreed, setAgreed, errors, onPrivacyPolicyOpen }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -125,8 +125,9 @@ export default function FeedbackFormModalAll ({ open, onClose, onSubmit, formDat
                   <Link
                     component="button"
                     type="button"
-                    onClick={(e) =>{ e.stopPropagation();
-                      setOpenPolicy(true);
+                    onClick={(e) =>{ 
+                      e.stopPropagation();
+                      onPrivacyPolicyOpen();
                     }}
                     color="secondary"
                     sx={{ textDecoration: 'underline', background: 'none', border: 'none', cursor: 'pointer' }}

@@ -1,16 +1,14 @@
 import { useState } from 'react';
 import { Button } from '@mui/material';
 import FeedbackFormModalAll from './FeedbackFormModalAll';
-import PrivacyPolicyModal from '../Privacy/PrivacyPolicyModal';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 import CheckIcon from '@mui/icons-material/Check';
 import { useMediaQuery } from '@mui/material';
 
-const FeedbackFormModal = () => {
+const FeedbackFormModal = ({ onPrivacyPolicyOpen }) => {
   const isMobile = useMediaQuery('(max-width:600px)');
   const [open, setOpen] = useState(false);
-  const [openPolicy, setOpenPolicy] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -84,7 +82,7 @@ const FeedbackFormModal = () => {
         size="large"
         variant="outlined"
         color="text.primary"
-        sx={{ borderRadius: '13px', textTransform: 'none', zIndex: 1}}
+        sx={{ borderRadius: '13px', textTransform: 'none', zIndex: 1 }}
       >
         Связаться с нами
       </Button>
@@ -98,11 +96,9 @@ const FeedbackFormModal = () => {
         agreed={agreed}
         setAgreed={setAgreed}
         errors={errors}
-        setOpenPolicy={setOpenPolicy}
-        sMobile={isMobile}
+        onPrivacyPolicyOpen={onPrivacyPolicyOpen}
+        isMobile={isMobile}
       />
-
-      <PrivacyPolicyModal open={openPolicy} onClose={() => setOpenPolicy(false)} />
 
       <Snackbar
         open={snackbar.open}
