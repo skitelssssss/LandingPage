@@ -4,6 +4,16 @@ import Offer3 from 'assets/images/landing/offer/offer-3.png';
 import Offer4 from 'assets/images/landing/offer/offer-4.png';
 import Offer1 from 'assets/images/landing/offer/offer-1.png';
 
+export const cards = [
+  {
+    title: "Избежать ошибок",
+    caption: "Прозрачные процессы и цифровые чек-листы минимизируют человеческий фактор",
+    image: Offer2
+  },
+  {
+    
+  }
+]
 export function AvoidMistakesCard() {
   return (
       <OfferCard

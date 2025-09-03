@@ -4,7 +4,7 @@ import { SnackbarContext } from 'contexts/SnackbarContext';
 import { useContext } from 'react';
 import FeedbackFormModalAll from './FeedbackFormModalAll';
 
-const DataForm = {
+const defaultFormValues = {
   firstName: '',
   lastName: '',
   email: '',
@@ -14,7 +14,7 @@ const DataForm = {
 
 const FeedbackFormModal = ({ onPrivacyPolicyOpen, open, onClose }) => {
   const isMobile = useMediaQuery('(max-width:600px)');
-  const [formData, setFormData] = useState(DataForm);
+  const [formData, setFormData] = useState(defaultFormValues);
   const [agreed, setAgreed] = useState(false);
   const [errors, setErrors] = useState({});
   const { showSnackbar } = useContext(SnackbarContext);

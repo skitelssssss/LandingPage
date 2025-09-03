@@ -63,13 +63,14 @@ export default function StartupProjectSection() {
                 }}
               >
                 <Typography
-                  variant="h2"
+                  variant="p"
                   sx={{
                     color: '#fff',
                     width: 'max-content',
                     fontSize: { xs: '1rem', sm: '1.563rem', md: '2.25rem', xl: '3rem' },
                     mt: { xs: 3, sm: 3.75, md: 5.5, xl: 7 },
-                    fontWeight: 400
+                    fontWeight: 400,
+                    whiteSpace: 'nowrap',
                   }}
                 >
                   Planify —

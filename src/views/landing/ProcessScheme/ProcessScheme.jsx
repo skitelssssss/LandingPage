@@ -73,7 +73,6 @@ export default function ProcessScheme() {
 
       return () => timers.forEach(clearTimeout);
     } catch (error) {
-      console.error('Ошибка загрузки изображений:', error);
       setImagesLoaded(true);
     }
   };

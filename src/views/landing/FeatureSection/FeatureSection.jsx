@@ -1,5 +1,7 @@
 import { Container, Grid, Typography } from '@mui/material';
 import { AvoidMistakesCard, FullControlCard, SavingTimeCard, IncreasedLoyaltyCard  } from './Card';
+import { cards } from './Card';
+import OfferCard from './OfferCard';
 
 export default function FeatureSection() {
   return (
@@ -28,16 +30,23 @@ export default function FeatureSection() {
 
         <Grid size={12}>
           <Grid container spacing={4} sx={{ justifyContent: 'center' }}>
-            <Grid size={{ md: 4.9, sm: 6 }}>
-              <SavingTimeCard component="article" />
-            </Grid>
+            {cards.map((card) => (
+              <Grid size={{ md: 4.9, sm: 6 }}>
+                <OfferCard
+                  title={card.title}
+                  caption={card.caption}
+                  image={card.image}
+                />
+              </Grid>
+            ))}
+              {/* <SavingTimeCard component="article" />
             <Grid size={{ md: 4.9, sm: 6 }}>
               <AvoidMistakesCard component="article" />
-            </Grid>
+            </Grid> */}
           </Grid>
         </Grid>
 
-        <Grid size={12}>
+        {/* <Grid size={12}>
           <Grid container spacing={4} sx={{ justifyContent: 'center', mt: -3.5 }}>
             <Grid size={{ md: 4.9, sm: 6 }}>
               <FullControlCard component="article" />
@@ -46,7 +55,7 @@ export default function FeatureSection() {
               <IncreasedLoyaltyCard component="article" />
             </Grid>
           </Grid>
-        </Grid>
+        </Grid> */}
       </Grid>
     </Container>
   );
