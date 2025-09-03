@@ -1,31 +1,23 @@
 import { useState } from 'react';
-import { Button } from '@mui/material';
-import FeedbackFormModalAll from './FeedbackFormModalAll';
-import Snackbar from '@mui/material/Snackbar';
-import Alert from '@mui/material/Alert';
-import CheckIcon from '@mui/icons-material/Check';
 import { useMediaQuery } from '@mui/material';
+import { SnackbarContext } from 'contexts/SnackbarContext'; 
+import { useContext } from 'react';
+import FeedbackFormModalAll from './FeedbackFormModalAll';
 
-const FeedbackFormModal = ({ onPrivacyPolicyOpen }) => {
+const DataForm = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  company: '',
+  message: '',
+};
+
+const FeedbackFormModal = ({ onPrivacyPolicyOpen, open, onClose }) => {
   const isMobile = useMediaQuery('(max-width:600px)');
-  const [open, setOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    company: '',
-    message: '',
-  });
+  const [formData, setFormData] = useState(DataForm);
   const [agreed, setAgreed] = useState(false);
   const [errors, setErrors] = useState({});
-  const [snackbar, setSnackbar] = useState({
-    open: false,
-    message: '',
-    severity: 'success',
-  });
-
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const { showSnackbar } = useContext(SnackbarContext);
 
   const validate = () => {
     const newErrors = {};
@@ -51,45 +43,22 @@ const FeedbackFormModal = ({ onPrivacyPolicyOpen }) => {
 
       if (!response.ok) throw new Error('Ошибка сети');
 
-      handleClose();
-      setSnackbar({
-        open: true,
-        message: 'Спасибо! Мы свяжемся с вами.',
-        severity: 'success',
-      });
+      onClose();
+      showSnackbar('Спасибо! Мы свяжемся с вами.', 'success');
 
-      setFormData({ firstName: '', lastName: '', email: '', company: '', message: '' });
+      setFormData(FormData);
       setAgreed(false);
       setErrors({});
     } catch (error) {
-      console.error('Ошибка:', error);
-      setSnackbar({
-        open: true,
-        message: 'Не удалось отправить. Попробуйте позже.',
-        severity: 'error',
-      });
+      showSnackbar('Не удалось отправить. Попробуйте позже.', 'error');
     }
-  };
-
-  const handleSnackbarClose = () => {
-    setSnackbar(prev => ({ ...prev, open: false }));
   };
 
   return (
     <>
-      <Button
-        onClick={handleOpen}
-        size="large"
-        variant="outlined"
-        color="text.primary"
-        sx={{ borderRadius: '13px', textTransform: 'none', zIndex: 1 }}
-      >
-        Связаться с нами
-      </Button>
-
       <FeedbackFormModalAll
         open={open}
-        onClose={handleClose}
+        onClose={onClose}
         onSubmit={handleSubmit}
         formData={formData}
         setFormData={setFormData}
@@ -99,22 +68,6 @@ const FeedbackFormModal = ({ onPrivacyPolicyOpen }) => {
         onPrivacyPolicyOpen={onPrivacyPolicyOpen}
         isMobile={isMobile}
       />
-
-      <Snackbar
-        open={snackbar.open}
-        autoHideDuration={3000}
-        onClose={handleSnackbarClose}
-        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-      >
-        <Alert
-          onClose={handleSnackbarClose}
-          icon={<CheckIcon fontSize="inherit" />}
-          severity={snackbar.severity}
-          sx={{ width: '100%' }}
-        >
-          {snackbar.message}
-        </Alert>
-      </Snackbar>
     </>
   );
 };

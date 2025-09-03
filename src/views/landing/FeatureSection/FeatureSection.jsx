@@ -1,7 +1,5 @@
 import { Container, Grid, Typography } from '@mui/material';
-
 import { AvoidMistakesCard, FullControlCard, SavingTimeCard, IncreasedLoyaltyCard  } from './Card';
-
 
 export default function FeatureSection() {
   return (

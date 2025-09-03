@@ -1,5 +1,8 @@
 import { useMemo } from 'react';
-
+import { ThemeMode, DASHBOARD_PATH } from 'config';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { IconMessage } from '@tabler/icons-react';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -7,14 +10,8 @@ import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-
-import { motion } from 'framer-motion';
-
 import AnimateButton from 'ui-component/extended/AnimateButton';
-
-import { ThemeMode, DASHBOARD_PATH } from 'config';
 import useConfig from 'hooks/useConfig';
-
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import dashboard from 'assets/images/landing/hero-dashboard.svg';
 import BgLight from 'assets/images/landing/bg-hero-block-light.png';
@@ -24,9 +21,8 @@ import HeaderAnimationImage from './HeaderAnimationImage';
 
 export default function HeaderSection( {onPrivacyPolicyOpen} ) {
   const { mode, themeDirection } = useConfig();
-
+  const [openFeedback, setOpenFeedback] = useState(false);
   const headerSX = { fontSize: { xs: '2rem', sm: '3rem', md: '3.5rem', lg: '3.5rem' } };
-
   const HeaderAnimationImagememo = useMemo(
     () => (
       <HeaderAnimationImage
@@ -105,7 +101,21 @@ export default function HeaderSection( {onPrivacyPolicyOpen} ) {
                         </AnimateButton>
                       </Grid>
                       <Grid>
-                        <FeedbackFormModal onPrivacyPolicyOpen={onPrivacyPolicyOpen} />
+                        <AnimateButton>
+                          <Button
+                            onClick={() => setOpenFeedback(true)}
+                            size="large"
+                            variant="outlined"
+                            color="text.primary"
+                            startIcon={<IconMessage size={20} />}
+                            sx={{ borderRadius: '13px', textTransform: 'none', zIndex: '1' }}
+                          >
+                            Связаться с нами
+                          </Button>
+                        </AnimateButton>
+                      </Grid>
+                      <Grid>
+                        <FeedbackFormModal onPrivacyPolicyOpen={onPrivacyPolicyOpen} open={openFeedback} onClose={() => setOpenFeedback(false)} />
                       </Grid>
                     </Grid>
                   </motion.div>

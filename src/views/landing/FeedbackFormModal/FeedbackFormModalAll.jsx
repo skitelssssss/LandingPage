@@ -1,13 +1,4 @@
-import {
-  Modal,
-  Box,
-  Typography,
-  TextField,
-  FormControlLabel,
-  Checkbox,
-  Button,
-  Link,
-} from '@mui/material';
+import { Modal, Box, Typography, TextField, FormControlLabel, Checkbox, Button, Link } from '@mui/material';
 
 export default function FeedbackFormModalAll ({ open, onClose, onSubmit, formData, setFormData, agreed, setAgreed, errors, onPrivacyPolicyOpen }) {
 

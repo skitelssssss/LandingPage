@@ -1,15 +1,6 @@
 import { useState } from 'react';
-import {
-  Box,
-  Typography,
-  Stack,
-  Button,
-  Collapse,
-  Divider,
-  Avatar,
-} from '@mui/material';
+import { Box, Typography, Stack, Button, Collapse, Divider, Avatar } from '@mui/material';
 import { CheckCircleOutline, ExpandMore } from '@mui/icons-material';
-
 import SubCard from 'ui-component/cards/SubCard';
 
 export default function PricingCard({ plan, bgColor }) {

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import {Container, Typography } from '@mui/material';
 import FadeInWhenVisible from '../FadeInWhenVisible';
-
 import ProcessSchemeDesktop from './ProcessSchemeDesktop';
 import ProcessSchemeMobile from './ProcessSchemeMobile';
 import ProcessImage from 'assets/images/landing/process.png';

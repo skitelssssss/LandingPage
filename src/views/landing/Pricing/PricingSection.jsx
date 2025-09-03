@@ -1,14 +1,8 @@
 import { useTheme } from '@mui/material/styles';
-import {
-  Container,
-  Grid,
-  Typography,
-  Box,
-} from '@mui/material';
-
+import { Container, Grid, Typography, Box } from '@mui/material';
+import { pricingPlans } from './PlansData'; 
 import FadeInWhenVisible from '../Animation'; 
 import PricingCard from './PricingCard'; 
-import { pricingPlans } from './PlansData'; 
 
 export default function PricingPlans() {
   const theme = useTheme();

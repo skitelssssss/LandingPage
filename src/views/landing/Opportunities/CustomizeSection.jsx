@@ -1,5 +1,4 @@
 import { Container, Grid } from '@mui/material';
-
 import AllowSection from './AllowSection';
 import FeaturesSection from './FeaturesSection';
 

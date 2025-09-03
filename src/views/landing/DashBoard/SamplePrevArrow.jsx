@@ -1,6 +1,6 @@
 import { useTheme } from '@mui/material';
-import IconButton from '@mui/material/IconButton';
 import { IconChevronLeft } from '@tabler/icons-react';
+import IconButton from '@mui/material/IconButton';
 
 function SamplePrevArrow(props) {
   const theme = useTheme();

@@ -1,6 +1,7 @@
-import PropTypes from 'prop-types';
 import { useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
+import PropTypes from 'prop-types';
+
 
 export default function FadeInWhenVisible({ children }) {
   const controls = useAnimation();

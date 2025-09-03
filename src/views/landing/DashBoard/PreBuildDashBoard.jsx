@@ -1,16 +1,13 @@
 import { useTheme } from '@mui/material/styles';
+import { Carousel } from 'react-responsive-carousel';
+import { ThemeMode } from 'config';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { Carousel } from 'react-responsive-carousel';
-
-import { ThemeMode } from 'config';
-
 import SliderLight1 from 'assets/images/landing/pre-apps/slider-light-1.png';
 import SliderLight2 from 'assets/images/landing/pre-apps/slider-light-2.png';
 import SliderLight3 from 'assets/images/landing/pre-apps/slider-light-3.png';
-
 import SamplePrevArrow from './SamplePrevArrow'
 import SampleNextArrow from './SampleNextArrow';
 import Items from './Items';

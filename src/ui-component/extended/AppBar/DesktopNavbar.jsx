@@ -1,8 +1,7 @@
 import { Stack } from '@mui/material';
+import { handleScrollTo } from './AppBar'
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
-
-import { handleScrollTo } from './AppBar'
 
 export default function DesktopNavbar() {
   return (

@@ -1,11 +1,10 @@
 import { useTheme } from '@mui/material/styles';
 import { Typography, Stack } from '@mui/material';
+import { ThemeMode } from 'config';
 import CardMedia from '@mui/material/CardMedia';
 import FadeInWhenVisible from '../Animation';
 import SubCard from 'ui-component/cards/SubCard';
 import Avatar from 'ui-component/extended/Avatar';
-import { ThemeMode } from 'config';
-
 
 export default function OfferCard({ title, caption, image }) {
   const theme = useTheme();

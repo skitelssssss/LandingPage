@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Logo from 'ui-component/Logo';
 import DesktopNavbar from './DesktopNavbar';
 import MobileNavbar from './MobileNavbar';
-import ElevationScroll from './ElevationScroll';
+import ElevationScroll from './ElevationScroll'; 
 
 export default function AppBar({ ...others }) {
   return (

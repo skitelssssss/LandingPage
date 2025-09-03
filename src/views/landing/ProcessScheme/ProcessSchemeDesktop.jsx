@@ -1,13 +1,19 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { Box, Typography } from '@mui/material';
-
+import { Box } from '@mui/material';
+import { AnimatedImageAll } from './AnimatedImageAll';
+import { AnimatedArrowDesktop } from './AnimatedArrowDesktop'; 
 import ProcessImage from 'assets/images/landing/process.png';
 import PlanningImage from 'assets/images/landing/planning.png';
 import ControlImage from 'assets/images/landing/control.png';
 import ResultImage from 'assets/images/landing/result.png';
-import ArrowRight from 'assets/images/landing/arrow-right.png';
 
 export default function ProcessSchemeDesktop({ visibleElements, imagesLoaded }) {
+  const imageConfig = [
+    { src: ProcessImage, alt: 'Процессы', index: 0 },
+    { src: PlanningImage, alt: 'Планирование', index: 2 },
+    { src: ControlImage, alt: 'Контроль', index: 4 },
+    { src: ResultImage, alt: 'Результат', index: 6 },
+  ];
+
   return (
     <Box
       sx={{
@@ -20,171 +26,51 @@ export default function ProcessSchemeDesktop({ visibleElements, imagesLoaded }) 
       }}
     >
       <Box sx={{ textAlign: 'center' }}>
-        <motion.img
-          src={ProcessImage}
-          alt="Процессы"
-          style={{ width: 120, height: 120 }}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={
-            imagesLoaded && visibleElements.includes(0)
-              ? {
-                  opacity: 1,
-                  scale: 1,
-                  transition: { duration: 0.6, scale: { type: 'spring', stiffness: 300, damping: 15 } },
-                }
-              : { opacity: 0, scale: 0.8 }
-          }
+        <AnimatedImageAll
+          src={imageConfig[0].src}
+          alt={imageConfig[0].alt}
+          label="Процессы"
+          isVisible={imagesLoaded && visibleElements.includes(imageConfig[0].index)}
         />
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={
-            imagesLoaded && visibleElements.includes(0)
-              ? { opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.2 } }
-              : { opacity: 0, y: 10 }
-          }
-        >
-          <Typography variant="body2" sx={{ mt: 2, fontWeight: 700 }}>
-            Процессы
-          </Typography>
-        </motion.div>
       </Box>
 
       <Box sx={{ minWidth: 60, minHeight: 20 }}>
-        <AnimatePresence>
-          {visibleElements.includes(1) && (
-            <motion.img
-              src={ArrowRight}
-              alt=""
-              style={{ width: 60, height: 20 }}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4 }}
-            />
-          )}
-        </AnimatePresence>
+        <AnimatedArrowDesktop isVisible={visibleElements.includes(1)} />
       </Box>
 
       <Box sx={{ textAlign: 'center' }}>
-        <motion.img
-          src={PlanningImage}
-          alt="Планирование"
-          style={{ width: 120, height: 120 }}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={
-            imagesLoaded && visibleElements.includes(2)
-              ? {
-                  opacity: 1,
-                  scale: 1,
-                  transition: { duration: 0.6, scale: { type: 'spring', stiffness: 300, damping: 15 } },
-                }
-              : { opacity: 0, scale: 0.8 }
-          }
+        <AnimatedImageAll
+          src={imageConfig[1].src}
+          alt={imageConfig[1].alt}
+          label="Планирование"
+          isVisible={imagesLoaded && visibleElements.includes(imageConfig[1].index)}
         />
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={
-            imagesLoaded && visibleElements.includes(2)
-              ? { opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.2 } }
-              : { opacity: 0, y: 10 }
-          }
-        >
-          <Typography variant="body2" sx={{ mt: 2, fontWeight: 700 }}>
-            Планирование
-          </Typography>
-        </motion.div>
       </Box>
 
       <Box sx={{ minWidth: 60, minHeight: 20 }}>
-        <AnimatePresence>
-          {visibleElements.includes(3) && (
-            <motion.img
-              src={ArrowRight}
-              alt=""
-              style={{ width: 60, height: 20 }}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4 }}
-            />
-          )}
-        </AnimatePresence>
+        <AnimatedArrowDesktop isVisible={visibleElements.includes(3)} />
       </Box>
 
       <Box sx={{ textAlign: 'center' }}>
-        <motion.img
-          src={ControlImage}
-          alt="Контроль"
-          style={{ width: 120, height: 120 }}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={
-            imagesLoaded && visibleElements.includes(4)
-              ? {
-                  opacity: 1,
-                  scale: 1,
-                  transition: { duration: 0.6, scale: { type: 'spring', stiffness: 300, damping: 15 } },
-                }
-              : { opacity: 0, scale: 0.8 }
-          }
+        <AnimatedImageAll
+          src={imageConfig[2].src}
+          alt={imageConfig[2].alt}
+          label="Контроль"
+          isVisible={imagesLoaded && visibleElements.includes(imageConfig[2].index)}
         />
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={
-            imagesLoaded && visibleElements.includes(4)
-              ? { opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.2 } }
-              : { opacity: 0, y: 10 }
-          }
-        >
-          <Typography variant="body2" sx={{ mt: 2, fontWeight: 700 }}>
-            Контроль
-          </Typography>
-        </motion.div>
       </Box>
 
       <Box sx={{ minWidth: 60, minHeight: 20 }}>
-        <AnimatePresence>
-          {visibleElements.includes(5) && (
-            <motion.img
-              src={ArrowRight}
-              alt=""
-              style={{ width: 60, height: 20 }}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4 }}
-            />
-          )}
-        </AnimatePresence>
+        <AnimatedArrowDesktop isVisible={visibleElements.includes(5)} />
       </Box>
 
       <Box sx={{ textAlign: 'center' }}>
-        <motion.img
-          src={ResultImage}
-          alt="Результат"
-          style={{ width: 120, height: 120 }}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={
-            imagesLoaded && visibleElements.includes(6)
-              ? {
-                  opacity: 1,
-                  scale: 1,
-                  transition: { duration: 0.6, scale: { type: 'spring', stiffness: 300, damping: 15 } },
-                }
-              : { opacity: 0, scale: 0.8 }
-          }
+        <AnimatedImageAll
+          src={imageConfig[3].src}
+          alt={imageConfig[3].alt}
+          label="Результат"
+          isVisible={imagesLoaded && visibleElements.includes(imageConfig[3].index)}
         />
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={
-            imagesLoaded && visibleElements.includes(6)
-              ? { opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.2 } }
-              : { opacity: 0, y: 10 }
-          }
-        >
-          <Typography variant="body2" sx={{ mt: 2, fontWeight: 700 }}>
-            Результат
-          </Typography>
-        </motion.div>
       </Box>
     </Box>
   );

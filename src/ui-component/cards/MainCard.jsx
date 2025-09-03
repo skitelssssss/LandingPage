@@ -1,12 +1,10 @@
+import { ThemeMode } from 'config';
 import PropTypes from 'prop-types';
-
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
-
-import { ThemeMode } from 'config';
 import useConfig from 'hooks/useConfig';
 
 const headerStyle = {

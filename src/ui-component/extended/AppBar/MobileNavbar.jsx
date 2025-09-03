@@ -1,4 +1,7 @@
 import { Box } from '@mui/material';
+import { IconBox, IconFriends, IconBasketDollar } from '@tabler/icons-react';
+import { handleScrollTo } from './AppBar';
+import { useState } from 'react';
 import IconButton from '@mui/material/IconButton';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -7,12 +10,7 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
-
 import MenuIcon from '@mui/icons-material/Menu';
-import { IconBox, IconFriends, IconBasketDollar } from '@tabler/icons-react';
-
-import { handleScrollTo } from './AppBar';
-import { useState } from 'react';
 
 export default function MobileNavbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);

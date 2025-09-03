@@ -1,8 +1,8 @@
 import { useTheme } from '@mui/material/styles';
 import { useState } from 'react';
+import { ThemeMode } from 'config';
+import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-
-
 import AppBar from 'ui-component/extended/AppBar/AppBar';
 import HeaderSection from './Header/HeaderSection';
 import FeatureSection from './FeatureSection/FeatureSection';
@@ -13,9 +13,6 @@ import PreBuildDashBoard from './DashBoard/PreBuildDashBoard';
 import StartupProjectSection from './Startup/StartupProjectSection';
 import ProcessScheme from './ProcessScheme/ProcessScheme';
 import PricingSection from './Pricing/PricingSection';
-
-import { ThemeMode } from 'config';
-import { styled } from '@mui/material/styles';
 import PrivacyPolicyModal from './Privacy/PrivacyPolicyModal';
 
 export default function Landing() {
