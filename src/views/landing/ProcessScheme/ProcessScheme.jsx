@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import {Container, Typography } from '@mui/material';
 import FadeInWhenVisible from '../FadeInWhenVisible';
-import ProcessSchemeDesktop from './ProcessSchemeDesktop';
-import ProcessSchemeMobile from './ProcessSchemeMobile';
+import ProcessSchemeForAll from './ProcessSchemeForAll';
 import ProcessImage from 'assets/images/landing/process.png';
 import PlanningImage from 'assets/images/landing/planning.png';
 import ControlImage from 'assets/images/landing/control.png';
@@ -97,8 +96,7 @@ export default function ProcessScheme() {
           </Typography>
         </FadeInWhenVisible>
 
-        <ProcessSchemeDesktop component="article" visibleElements={visibleElements} imagesLoaded={imagesLoaded} />
-        <ProcessSchemeMobile component="article" visibleElements={visibleElements} imagesLoaded={imagesLoaded} />
+        <ProcessSchemeForAll component="article" visibleElements={visibleElements} imagesLoaded={imagesLoaded} />
       </Container>
   );
 }

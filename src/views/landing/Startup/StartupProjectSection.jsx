@@ -63,7 +63,7 @@ export default function StartupProjectSection() {
                 }}
               >
                 <Typography
-                  variant="p"
+                  variant="body2"
                   sx={{
                     color: '#fff',
                     width: 'max-content',

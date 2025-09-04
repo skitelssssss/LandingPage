@@ -45,7 +45,7 @@ export default function PricingCard({ plan, bgColor }) {
               {plan.icon}
             </Avatar>
             <Box>
-              <Typography variant="h2" fontWeight={700} color="text.primary" sx={{fontSize: '1rem'}}>
+              <Typography variant="h3" fontWeight={700} color="text.primary" sx={{fontSize: '1rem'}}>
                 {plan.title}
               </Typography>
               <Typography variant="body2" color="text.secondary">

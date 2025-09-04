@@ -2,11 +2,11 @@ import { Grid, Typography } from '@mui/material';
 import { IconCircleCheck } from '@tabler/icons-react';
 import CardMedia from '@mui/material/CardMedia';
 import LayerRight from 'assets/images/landing/customization-right.png';
-import listSX from './listSX';
+import listSX from './listSX.styled';
 
 export default function FeaturesSection() {
   return (
-    <Grid container spacing={2.5} direction={{ xs: 'column-reverse', md: 'row' }}>
+    <Grid component="section" container spacing={2.5} direction={{ xs: 'column-reverse', md: 'row' }}>
       <Grid size={{ xs: 12, md: 6 }}>
         <Grid container spacing={2.5}>
           <Grid size={12}>

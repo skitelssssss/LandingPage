@@ -46,7 +46,7 @@ export default function OfferCard({ title, caption, image }) {
             <CardMedia component="img" src={image} alt="" />
           </Avatar>
           <Stack spacing={2}>
-            <Typography variant="h2" sx={{ fontWeight: 600, fontSize: '1.2rem' }}>{title}</Typography>
+            <Typography variant="h3" sx={{ fontWeight: 600, fontSize: '1.2rem' }}>{title}</Typography>
             <Typography variant="body2" sx={{ fontSize: '1rem' }}>
               {caption}
             </Typography>

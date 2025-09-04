@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Typography } from '@mui/material';
 
-export const AnimatedImageAll = ({ src, alt, isVisible, label, imageIndex, labelIndex }) => {
+export const ImageAnimation = ({ src, alt, isVisible, label, imageIndex, labelIndex }) => {
   return (
     <>
       <motion.img

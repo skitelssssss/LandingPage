@@ -14,19 +14,11 @@ import StartupProjectSection from './Startup/StartupProjectSection';
 import ProcessScheme from './ProcessScheme/ProcessScheme';
 import PricingSection from './Pricing/PricingSection';
 import PrivacyPolicyModal from './Privacy/PrivacyPolicyModal';
+import StyledSection from './index.styled';
+import { Padding } from '@mui/icons-material';
 
 export default function Landing() {
   const theme = useTheme();
-
-  const Section = styled(Box)(({ theme }) => ({
-    paddingTop: theme.spacing(12.5),
-    paddingBottom: theme.spacing(12.5),
-    bgcolor: 'background.default',
-    [theme.breakpoints.down('sm')]: {
-      paddingTop: theme.spacing(10),
-      paddingBottom: theme.spacing(10),
-    }
-  }));
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -49,37 +41,33 @@ export default function Landing() {
         <HeaderSection component="header" onPrivacyPolicyOpen={handleOpen} />
       </Box>
       
-      <Section component="section">
+      <StyledSection component="section">
         <ProcessScheme />
-      </Section>
+      </StyledSection>
 
-      <Section component="section" sx={{ bgcolor: 'grey.100' }}>
+      <StyledSection component="section" sx={{ bgcolor: 'grey.100' }}>
         <CustomizeSection />
-      </Section>
+      </StyledSection>
 
-      <Section component="section">
+      <StyledSection component="section">
         <FeatureSection />
-      </Section>
+      </StyledSection>
 
-      <Section id="decisions" component="section" sx={{ bgcolor: 'grey.100' }}>
+      <StyledSection id="decisions" component="section" sx={{ bgcolor: 'grey.100' }}>
         <PreBuildDashBoard />
-      </Section>
+      </StyledSection>
 
-      <Section id="reviews" component="section">
+      <StyledSection id="reviews" component="section">
         <PeopleSection />
-      </Section>
+      </StyledSection>
 
-      <Box id="pricing" component="section" >
+      <StyledSection id="pricing" component="section" sx={{ py: 0, my: 0 }}>
         <PricingSection />
-      </Box>
+      </StyledSection>
 
-      <Box component="footer">
-        <StartupProjectSection />
-      </Box>
+      <StartupProjectSection component="footer" />
 
-      <Box component="footer">
-        <FooterSection onPrivacyPolicyOpen={handleOpen} />
-      </Box>
+      <FooterSection component="footer" onPrivacyPolicyOpen={handleOpen} />
 
       <PrivacyPolicyModal open={open} onClose={handleClose} />
     </>

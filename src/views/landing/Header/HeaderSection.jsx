@@ -16,8 +16,7 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import dashboard from 'assets/images/landing/hero-dashboard.svg';
 import BgLight from 'assets/images/landing/bg-hero-block-light.png';
 import FeedbackFormModal from '../FeedbackFormModal/FeedbackFormModal';
-import HeaderImage from './HeaderImage'
-import HeaderAnimationImage from './HeaderAnimationImage';
+import { HeaderImage, HeaderAnimationImage } from './Header.styled';
 
 export default function HeaderSection( {onPrivacyPolicyOpen} ) {
   const { mode, themeDirection } = useConfig();

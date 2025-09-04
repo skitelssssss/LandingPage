@@ -8,11 +8,11 @@ export default function CustomizeSection() {
         <Grid container spacing={{ xs: 3, sm: 4, md: 5 }} justifyContent="center">
           
           <Grid size={12}>
-            <AllowSection component="article" />
+            <AllowSection />
           </Grid>
 
           <Grid size={12}>
-            <FeaturesSection component="article" />
+            <FeaturesSection />
           </Grid>
 
         </Grid>

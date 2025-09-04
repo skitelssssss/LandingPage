@@ -2,17 +2,17 @@ import { Stack, Grid, Typography } from '@mui/material';
 import { IconCircleCheck } from '@tabler/icons-react';
 import CardMedia from '@mui/material/CardMedia';
 import LayerLeft from 'assets/images/landing/customization-left.png';
-import listSX from './listSX'
+import listSX from './listSX.styled'
 
 export default function AllowSection() {
   return (
-    <Grid container spacing={3} direction={{ xs: 'column', md: 'row' }} alignItems="center">
+    <Grid component="section" container spacing={3} direction={{ xs: 'column', md: 'row' }} alignItems="center">
       <Grid size={{ xs: 12, md: 6 }}>
         <Stack sx={{ mb: 4, mx: 'auto', maxWidth: '100%' }}>
           <CardMedia
             component="img"
             image={LayerLeft}
-            alt="Planify позволяет автоматизировать процессы"
+            alt="Planify:("
             sx={{
               width: '100%',
               height: 'auto',

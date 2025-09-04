@@ -43,7 +43,7 @@ export default function PeopleCard({ id, name, image, tag, content, view }) {
             </Typography>
           </Stack>
         </Stack>
-        <Typography variant="p">{content}</Typography>
+        <Typography variant="body2">{content}</Typography>
       </Stack>
     </SubCard>
   );
