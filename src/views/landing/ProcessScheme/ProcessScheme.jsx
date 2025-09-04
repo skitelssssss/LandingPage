@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import {Container, Typography } from '@mui/material';
 import FadeInWhenVisible from '../FadeInWhenVisible';
-import ProcessSchemeForAll from './ProcessSchemeForAll';
+import ProcessSchemeForAll from './ProcessSchemeForAll'
 import ProcessImage from 'assets/images/landing/process.png';
 import PlanningImage from 'assets/images/landing/planning.png';
 import ControlImage from 'assets/images/landing/control.png';

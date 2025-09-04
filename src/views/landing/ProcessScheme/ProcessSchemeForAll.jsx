@@ -1,7 +1,6 @@
 import { Box, useMediaQuery } from '@mui/material';
 import { ImageAnimation } from './ImageAnimation';
-import { AnimatedArrowDesktop } from './AnimatedArrowDesktop';
-import { AnimatedArrowMobile } from './AnimatedArrowMobile';
+import { AnimatedArrow } from './AnimatedArrow';
 import ProcessImage from 'assets/images/landing/process.png';
 import PlanningImage from 'assets/images/landing/planning.png';
 import ControlImage from 'assets/images/landing/control.png';
@@ -53,9 +52,10 @@ export default function ProcessScheme({ visibleElements, imagesLoaded }) {
         </Box>
 
         <Box sx={{ mx: 0.5 }}>
-          <AnimatedArrowMobile
+          <AnimatedArrow
             src={ArrowUp}
             isVisible={visibleElements.includes(1)}
+            isMobile={isMobile}
             style={{
               width: 'clamp(40px, 10vw, 70px)',
               height: 'auto',
@@ -84,9 +84,10 @@ export default function ProcessScheme({ visibleElements, imagesLoaded }) {
           pointerEvents: 'none',
         }}
       >
-        <AnimatedArrowMobile
+        <AnimatedArrow
           src={ArrowLeft}
           isVisible={visibleElements.includes(3)}
+          isMobile={isMobile}
           style={{
             width: 'clamp(60px, 15vw, 90px)',
             height: 'auto',
@@ -115,9 +116,10 @@ export default function ProcessScheme({ visibleElements, imagesLoaded }) {
           />
         </Box>
         <Box sx={{ mx: 0.5 }}>
-          <AnimatedArrowMobile
+          <AnimatedArrow
             src={ArrowUp}
             isVisible={visibleElements.includes(5)}
+            isMobile={isMobile}
             style={{
               width: 'clamp(40px, 10vw, 70px)',
               height: 'auto',
@@ -158,7 +160,11 @@ export default function ProcessScheme({ visibleElements, imagesLoaded }) {
       </Box>
 
       <Box sx={{ minWidth: 60, minHeight: 20 }}>
-        <AnimatedArrowDesktop src={ArrowRight} isVisible={visibleElements.includes(1)} />
+        <AnimatedArrow 
+          src={ArrowRight} 
+          isVisible={visibleElements.includes(1)} 
+          isMobile={isMobile}
+        />
       </Box>
 
       <Box sx={{ textAlign: 'center' }}>
@@ -171,7 +177,11 @@ export default function ProcessScheme({ visibleElements, imagesLoaded }) {
       </Box>
 
       <Box sx={{ minWidth: 60, minHeight: 20 }}>
-        <AnimatedArrowDesktop src={ArrowRight} isVisible={visibleElements.includes(3)} />
+        <AnimatedArrow 
+          src={ArrowRight} 
+          isVisible={visibleElements.includes(3)} 
+          isMobile={isMobile}
+        />
       </Box>
 
       <Box sx={{ textAlign: 'center' }}>
@@ -184,7 +194,11 @@ export default function ProcessScheme({ visibleElements, imagesLoaded }) {
       </Box>
 
       <Box sx={{ minWidth: 60, minHeight: 20 }}>
-        <AnimatedArrowDesktop src={ArrowRight} isVisible={visibleElements.includes(5)} />
+        <AnimatedArrow 
+          src={ArrowRight} 
+          isVisible={visibleElements.includes(5)} 
+          isMobile={isMobile}
+        />
       </Box>
 
       <Box sx={{ textAlign: 'center' }}>
