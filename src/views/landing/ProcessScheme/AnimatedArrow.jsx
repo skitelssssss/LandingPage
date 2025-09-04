@@ -9,8 +9,9 @@ export const AnimatedArrow = ({
   offset = -20,
   isMobile = false 
 }) => {
-  // Для мобильной версии используем переданные параметры
+
   if (isMobile) {
+    
     return (
       <AnimatePresence>
         {isVisible && (
@@ -28,7 +29,6 @@ export const AnimatedArrow = ({
     );
   }
 
-  // Для десктопной версии - фиксированные параметры
   return (
     <AnimatePresence>
       {isVisible && (
