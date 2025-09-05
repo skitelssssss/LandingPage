@@ -1,7 +1,5 @@
 import { useTheme } from '@mui/material/styles';
-import { useState } from 'react';
 import { ThemeMode } from 'config';
-import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import AppBar from 'ui-component/extended/AppBar/AppBar';
 import HeaderSection from './Header/HeaderSection';
@@ -13,16 +11,10 @@ import PreBuildDashBoard from './DashBoard/PreBuildDashBoard';
 import StartupProjectSection from './Startup/StartupProjectSection';
 import ProcessScheme from './ProcessScheme/ProcessScheme';
 import PricingSection from './Pricing/PricingSection';
-import PrivacyPolicyModal from './Privacy/PrivacyPolicyModal';
 import StyledSection from './index.styled';
-import { Padding } from '@mui/icons-material';
 
 export default function Landing() {
   const theme = useTheme();
-
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
 
   return (
     <>
@@ -38,7 +30,7 @@ export default function Landing() {
         }}
       >
         <AppBar cmponent="section"/>
-        <HeaderSection component="header" onPrivacyPolicyOpen={handleOpen} />
+        <HeaderSection component="header" />
       </Box>
       
       <StyledSection component="section">
@@ -67,9 +59,7 @@ export default function Landing() {
 
       <StartupProjectSection component="footer" />
 
-      <FooterSection component="footer" onPrivacyPolicyOpen={handleOpen} />
-
-      <PrivacyPolicyModal open={open} onClose={handleClose} />
+      <FooterSection component="footer" />
     </>
   );
 }

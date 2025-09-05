@@ -15,7 +15,7 @@ export function SnackbarProvider({ children }) {
     setSnackbar({ open: true, message, severity });
   }, []);
 
-  const handleClose = (event, reason) => {
+  const handleClose = (reason) => {
     if (reason === 'clickaway') return;
     setSnackbar((prev) => ({ ...prev, open: false }));
   };

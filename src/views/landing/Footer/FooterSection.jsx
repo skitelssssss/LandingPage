@@ -1,9 +1,12 @@
 import { Container, IconButton, Typography, Stack, Link, Box } from '@mui/material';
+import { useContext } from 'react';
+import { PrivacyContext } from '../../../contexts/PrivacyContext';
 import EmailIcon from '@mui/icons-material/Email';
 import PlaceIcon from '@mui/icons-material/Place';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
-export default function FooterSection({onPrivacyPolicyOpen}) {
+export default function FooterSection() {
+  const { openPrivacyModal } = useContext(PrivacyContext);
   return (
     <Box sx={{ bgcolor: 'dark.dark', py: { xs: 3, sm: 1.5 } }}>
       <Container component="footer">
@@ -21,7 +24,7 @@ export default function FooterSection({onPrivacyPolicyOpen}) {
               </Link>
             </Typography>
             <Typography variant="caption" color="text.secondary">
-              <Link component="button" onClick={onPrivacyPolicyOpen} underline="hover" sx={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit' }}>
+              <Link component="button" onClick={openPrivacyModal} underline="hover" sx={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit' }}>
                 Политика обработки персональных данных
               </Link>
             </Typography>

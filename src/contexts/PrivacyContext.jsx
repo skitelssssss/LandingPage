@@ -1,30 +1,23 @@
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useCallback } from 'react';
+import PrivacyPolicyModal from '../views/landing/Privacy/PrivacyPolicyModal';
 
-const PrivacyContext = createContext();
+export const PrivacyContext = createContext();
 
-export const usePrivacyModal = () => {
-  const context = useContext(PrivacyContext);
-  if (!context) {
-    throw new Error;
-  }
-  return context;
-};
+export function PrivacyProvider({ children }) {
+  const [open, setOpen] = useState(false);
 
-export const PrivacyProvider = ({ children }) => {
-  const [isPrivacyOpen, setPrivacyOpen] = useState(false);
+  const openPrivacyModal = useCallback(() => {
+    setOpen(true)
+  });
 
-  const openPrivacy = () => setPrivacyOpen(true);
-  const closePrivacy = () => setPrivacyOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
-    <PrivacyContext.Provider
-      value={{
-        isPrivacyOpen,
-        openPrivacy,
-        closePrivacy,
-      }}
-    >
-      {children}
+    <PrivacyContext.Provider value={{ openPrivacyModal }}> // раздает value все обернутым в него 
+      {children} 
+      <PrivacyPolicyModal open={open} onClose={handleClose} />
     </PrivacyContext.Provider>
   );
-};
+}

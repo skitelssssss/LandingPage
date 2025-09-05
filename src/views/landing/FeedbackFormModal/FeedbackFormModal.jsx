@@ -3,6 +3,7 @@ import { useMediaQuery } from '@mui/material';
 import { SnackbarContext } from 'contexts/SnackbarContext'; 
 import { useContext } from 'react';
 import { Modal, Box, Typography, TextField, FormControlLabel, Checkbox, Button, Link } from '@mui/material';
+import { PrivacyContext } from '../../../contexts/PrivacyContext';
 
 const style = {
     position: 'absolute',
@@ -27,12 +28,14 @@ const defaultFormValues = {
   message: '',
 };
 
-const FeedbackFormModal = ({ onPrivacyPolicyOpen, open, onClose }) => {
+const FeedbackFormModal = ({ open, onClose }) => {
   const isMobile = useMediaQuery('(max-width:600px)');
   const [formData, setFormData] = useState(defaultFormValues);
   const [agreed, setAgreed] = useState(false);
   const [errors, setErrors] = useState({});
   const { showSnackbar } = useContext(SnackbarContext);
+  const { openPrivacyModal } = useContext(PrivacyContext);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -168,10 +171,7 @@ const FeedbackFormModal = ({ onPrivacyPolicyOpen, open, onClose }) => {
                   <Link
                     component="button"
                     type="button"
-                    onClick={(e) =>{ 
-                      e.stopPropagation();
-                      onPrivacyPolicyOpen();
-                    }}
+                    onClick={openPrivacyModal}
                     color="secondary"
                     sx={{ textDecoration: 'underline', background: 'none', border: 'none', cursor: 'pointer' }}
                   >

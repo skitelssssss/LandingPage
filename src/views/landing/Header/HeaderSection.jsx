@@ -3,6 +3,7 @@ import { ThemeMode, DASHBOARD_PATH } from 'config';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { IconMessage } from '@tabler/icons-react';
+import { HeaderImage, HeaderAnimationImage } from './Header.styled';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -16,9 +17,9 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import dashboard from 'assets/images/landing/hero-dashboard.svg';
 import BgLight from 'assets/images/landing/bg-hero-block-light.png';
 import FeedbackFormModal from '../FeedbackFormModal/FeedbackFormModal';
-import { HeaderImage, HeaderAnimationImage } from './Header.styled';
 
-export default function HeaderSection( {onPrivacyPolicyOpen} ) {
+
+export default function HeaderSection() {
   const { mode, themeDirection } = useConfig();
   const [openFeedback, setOpenFeedback] = useState(false);
   const headerSX = { fontSize: { xs: '2rem', sm: '3rem', md: '3.5rem', lg: '3.5rem' } };
@@ -114,7 +115,7 @@ export default function HeaderSection( {onPrivacyPolicyOpen} ) {
                         </AnimateButton>
                       </Grid>
                       <Grid>
-                        <FeedbackFormModal onPrivacyPolicyOpen={onPrivacyPolicyOpen} open={openFeedback} onClose={() => setOpenFeedback(false)} />
+                        <FeedbackFormModal open={openFeedback} onClose={() => setOpenFeedback(false)} />
                       </Grid>
                     </Grid>
                   </motion.div>
